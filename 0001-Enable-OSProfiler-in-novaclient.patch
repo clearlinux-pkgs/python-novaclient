@@ -1,0 +1,97 @@
+From 35a5e44c52de7a122fe6b8894bf9aeb4ab39d6de Mon Sep 17 00:00:00 2001
+From: "Munoz, Obed N" <obed.n.munoz@intel.com>
+Date: Mon, 22 Jun 2015 11:30:58 -0500
+Subject: [PATCH] Enable OSProfiler in novaclient
+
+Signed-off-by: Munoz, Obed N <obed.n.munoz@intel.com>
+---
+ novaclient/client.py |  4 ++++
+ novaclient/shell.py  | 25 +++++++++++++++++++++++++
+ 2 files changed, 29 insertions(+)
+
+diff --git a/novaclient/client.py b/novaclient/client.py
+index 32eb775..3e61ea1 100644
+--- a/novaclient/client.py
++++ b/novaclient/client.py
+@@ -57,6 +57,8 @@ class TCPKeepAliveAdapter(adapters.HTTPAdapter):
+         super(TCPKeepAliveAdapter, self).init_poolmanager(*args, **kwargs)
+ 
+ 
++osprofiler_web = importutils.try_import("osprofiler.web")
++
+ class _ClientConnectionPool(object):
+ 
+     def __init__(self):
+@@ -347,6 +349,8 @@ class HTTPClient(object):
+         kwargs.setdefault('headers', kwargs.get('headers', {}))
+         kwargs['headers']['User-Agent'] = self.USER_AGENT
+         kwargs['headers']['Accept'] = 'application/json'
++        if osprofiler_web:
++            kwargs['headers'].update(osprofiler_web.get_trace_id_headers())
+         if 'body' in kwargs:
+             kwargs['headers']['Content-Type'] = 'application/json'
+             kwargs['data'] = json.dumps(kwargs['body'])
+diff --git a/novaclient/shell.py b/novaclient/shell.py
+index 652713b..517b931 100644
+--- a/novaclient/shell.py
++++ b/novaclient/shell.py
+@@ -53,10 +53,13 @@ from novaclient import client
+ from novaclient import exceptions as exc
+ import novaclient.extension
+ from novaclient.i18n import _
++from oslo.utils import importutils
+ from novaclient.openstack.common import cliutils
+ from novaclient import utils
+ from novaclient.v2 import shell as shell_v2
+ 
++osprofiler_profiler = importutils.try_import("osprofiler.profiler")
++
+ DEFAULT_OS_COMPUTE_API_VERSION = "2"
+ DEFAULT_NOVA_ENDPOINT_TYPE = 'publicURL'
+ # NOTE(cyeoh): Having the service type dependent on the API version
+@@ -431,6 +434,19 @@ class OpenStackComputeShell(object):
+         parser.add_argument('--bypass_url',
+                             help=argparse.SUPPRESS)
+ 
++        if osprofiler_profiler:
++            parser.add_argument('--profile',
++                                metavar='HMAC_KEY',
++                                help='HMAC key to use for encrypting context '
++                                'data for performance profiling of operation. '
++                                'This key should be the value of HMAC key '
++                                'configured in OSprofiler middleware in '
++                                'cinder, it specified in paste configuration '
++                                'file at /etc/nova/api-paste.ini. '
++                                'Without key the profiling will not be '
++                                'triggered even if OSprofiler is enabled '
++                                'on server side.')
++
+         # The auth-system-plugins might require some extra options
+         novaclient.auth_plugin.load_auth_system_opts(parser)
+ 
+@@ -577,6 +593,9 @@ class OpenStackComputeShell(object):
+         parser = self.get_base_parser()
+         (options, args) = parser.parse_known_args(argv)
+         self.setup_debugging(options.debug)
++        profile = osprofiler_profiler and options.profile
++        if profile:
++            osprofiler_profiler.init(options.profile)
+ 
+         # Discover available auth plugins
+         novaclient.auth_plugin.discover_auth_systems()
+@@ -837,6 +856,12 @@ class OpenStackComputeShell(object):
+ 
+         args.func(self.cs, args)
+ 
++        if profile:
++            trace_id = osprofiler_profiler.get().get_base_id()
++            print("Trace ID: %s" % trace_id)
++            print("To display trace use next command:\n"
++                  "osprofiler trace show --html %s " % trace_id)
++
+         if args.timings:
+             self._dump_timings(self.times + self.cs.get_timings())
+ 
+-- 
+2.4.4
+
