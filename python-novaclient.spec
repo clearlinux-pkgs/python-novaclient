@@ -4,7 +4,7 @@
 #
 Name     : python-novaclient
 Version  : 2.30.0
-Release  : 18
+Release  : 19
 URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-2.30.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-2.30.0.tar.gz
 Summary  : Client library for OpenStack Compute API
@@ -17,7 +17,6 @@ BuildRequires : Jinja2-python
 BuildRequires : Pygments-python
 BuildRequires : Sphinx-python
 BuildRequires : coverage-python
-BuildRequires : debtcollector-python
 BuildRequires : discover-python
 BuildRequires : docutils-python
 BuildRequires : extras
@@ -33,7 +32,6 @@ BuildRequires : keyring-python
 BuildRequires : linecache2-python
 BuildRequires : markupsafe-python
 BuildRequires : mccabe-python
-BuildRequires : monotonic-python
 BuildRequires : msgpack-python-python
 BuildRequires : netaddr-python
 BuildRequires : netifaces-python
@@ -74,7 +72,7 @@ BuildRequires : tox
 BuildRequires : traceback2-python
 BuildRequires : unittest2-python
 BuildRequires : virtualenv
-BuildRequires : wrapt-python
+Patch1: 0001-Allow-image-ID-to-passed-in-directly.patch
 
 %description
 Python bindings to the OpenStack Nova API
@@ -91,6 +89,14 @@ bin components for the python-novaclient package.
 %package python
 Summary: python components for the python-novaclient package.
 Group: Default
+Requires: Babel-python
+Requires: iso8601-python
+Requires: oslo.i18n-python
+Requires: oslo.serialization-python
+Requires: oslo.utils-python
+Requires: python-keystoneclient-python
+Requires: requests-python
+Requires: six-python
 
 %description python
 python components for the python-novaclient package.
@@ -98,6 +104,7 @@ python components for the python-novaclient package.
 
 %prep
 %setup -q -n python-novaclient-2.30.0
+%patch1 -p1
 
 %build
 python2 setup.py build -b py2
