@@ -4,7 +4,7 @@
 #
 Name     : python-novaclient
 Version  : 2.31.0
-Release  : 21
+Release  : 22
 URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-2.31.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-2.31.0.tar.gz
 Summary  : Client library for OpenStack Compute API
