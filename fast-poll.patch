@@ -1,0 +1,15 @@
+Poll every 200ms, rather than 5s. This thus makes --poll useful for simple benchmarks.
+
+Index: python-novaclient-2.31.0/novaclient/v2/shell.py
+===================================================================
+--- python-novaclient-2.31.0.orig/novaclient/v2/shell.py
++++ python-novaclient-2.31.0/novaclient/v2/shell.py
+@@ -548,7 +548,7 @@ def do_cloudpipe_configure(cs, args):
+ 
+ 
+ def _poll_for_status(poll_fn, obj_id, action, final_ok_states,
+-                     poll_period=5, show_progress=True,
++                     poll_period=0.2, show_progress=True,
+                      status_field="status", silent=False):
+     """Block while an action is being performed, periodically printing
+     progress.

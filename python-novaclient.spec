@@ -4,7 +4,7 @@
 #
 Name     : python-novaclient
 Version  : 2.31.0
-Release  : 20
+Release  : 21
 URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-2.31.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-2.31.0.tar.gz
 Summary  : Client library for OpenStack Compute API
@@ -73,6 +73,7 @@ BuildRequires : traceback2-python
 BuildRequires : unittest2-python
 BuildRequires : virtualenv
 Patch1: 0001-Allow-image-ID-to-passed-in-directly.patch
+Patch2: fast-poll.patch
 
 %description
 Python bindings to the OpenStack Nova API
@@ -105,6 +106,7 @@ python components for the python-novaclient package.
 %prep
 %setup -q -n python-novaclient-2.31.0
 %patch1 -p1
+%patch2 -p1
 
 %build
 python2 setup.py build -b py2
