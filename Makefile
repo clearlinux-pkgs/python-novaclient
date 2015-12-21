@@ -1,5 +1,5 @@
 PKG_NAME := python-novaclient
-URL := http://tarballs.openstack.org/python-novaclient/python-novaclient-2.35.0.tar.gz
+URL := http://tarballs.openstack.org/python-novaclient/python-novaclient-3.1.0.tar.gz
 ARCHIVES :=
 
 include ../common/Makefile.common

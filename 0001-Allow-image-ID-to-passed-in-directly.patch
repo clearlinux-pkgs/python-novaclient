@@ -1,26 +1,25 @@
-From 9d67d58d291ac72bb7479d072d6927183e0f35ad Mon Sep 17 00:00:00 2001
-From: William Douglas <william.douglas@intel.com>
-Date: Thu, 1 Oct 2015 14:29:59 -0700
+From 2b7b211b91c784f089a5334dd915f29718c219d6 Mon Sep 17 00:00:00 2001
+From: Alberto Murillo <alberto.murillo.silva@intel.com>
+Date: Mon, 21 Dec 2015 11:29:14 -0600
 Subject: [PATCH] Allow image ID to passed in directly
 
 Instead of having an image object passed in, allow the image ID to be
 passed in as well in case the ID was specified on the commandline
 directly and not obtained from a request to nova.
 ---
- novaclient/v2/servers.py | 11 +++++++++--
- 1 file changed, 9 insertions(+), 2 deletions(-)
+ novaclient/v2/servers.py | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
 diff --git a/novaclient/v2/servers.py b/novaclient/v2/servers.py
-index d21bc5f..2fd670d 100644
+index bfab3f4..07468cc 100644
 --- a/novaclient/v2/servers.py
 +++ b/novaclient/v2/servers.py
-@@ -420,15 +420,22 @@ class ServerManager(base.BootingManagerWithFind):
-               max_count=None, security_groups=None, key_name=None,
+@@ -429,15 +429,21 @@ class ServerManager(base.BootingManagerWithFind):
                availability_zone=None, block_device_mapping=None,
                block_device_mapping_v2=None, nics=None, scheduler_hints=None,
--              config_drive=None, admin_pass=None, disk_config=None, **kwargs):
-+              config_drive=None, admin_pass=None, disk_config=None,
-+              image_id=False, **kwargs):
+               config_drive=None, admin_pass=None, disk_config=None,
+-              access_ip_v4=None, access_ip_v6=None, **kwargs):
++              access_ip_v4=None, access_ip_v6=None, image_id=False, **kwargs):
          """
          Create (boot) a new server.
          """
