@@ -1,9 +1,26 @@
 CHANGES
 =======
 
+3.2.0
+-----
+
+* Use assertTrue/False instead of assertEqual(T/F)
+* Add python 2.7 comment
+* Fix extension loading from python path on Python 2.7
+* Wrong usage of "a/an"
+* Fix help strings
+* Validate the fixed ip address passed with --nic
+* [microversions] share one object for shell arguments
+* Put py34 first in the env order of tox
+* Fixed test_shell which can't test microversions>=2.4
+* Updated from global requirements
+* document search_opts parameter
+* Cleanup needless code from oslo-incubator
+
 3.1.0
 -----
 
+* Validation for arguments of list command passed by "--fields"
 
 3.0.0
 -----
@@ -34,6 +51,7 @@ CHANGES
 * Enable pass instance name as parameter in nova cli
 * Fix H404/405 violations in client.py,base.py,api_version.py
 * Help msg about libvirt always default device names
+* Fix a Typo in Docstring
 * Updated from global requirements
 * Remove python 2.6 support from python-novaclient
 * [microversions] Increase max version to 2.7
