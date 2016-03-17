@@ -1,15 +1,77 @@
 CHANGES
 =======
 
+3.3.0
+-----
+
+* [microversion] Bump to 2.25
+* Support for abort an ongoing live migration
+* Add two server-migration commands and bump migration-list command
+* Use isinstance instead of type
+* Support for forcing live migration to complete
+* Adds missing internationalization for help message
+* [microversions] Enable 2.21
+* [microversions] fix help msg for versioned args
+* Use assertIsNone instead of assertEqual(None, ***)
+* Functional tests for trigger-crash-dump (microversion 2.17)
+* Fix string interpolation at logging call
+* Updated from global requirements
+* Add a way to discover only contrib extensions
+* [functional] Move code for boot vm to base testcase
+* [microversions] Enable 2.20
+* [microversions] Turn off check for header in response
+* [microversions] Add support for 2.19
+* Allow to specify a network for functional tests
+* Provide user with coherent interface to get request_ids
+* [microversions] Skip microversion 2.18
+* Fix running functional tests against deployment with insecure SSL
+* Updated from global requirements
+* Make _poll_for_status more user-friendly
+* Fix omission of request_ids returned to user
+* Remove unnecessary filter from Resource's __repr__() function
+* Use # noqa to ignore one line but not whole file
+* Add release notes for return-request-id-to-caller
+* Update translation setup
+* Add return-request-id-to-caller function(5/5)
+* Add return-request-id-to-caller function(4/5)
+* Add return-request-id-to-caller function(3/5)
+* Support to boot a VM with network name
+* Add return-request-id-to-caller function(2/5)
+* Add return-request-id-to-caller function(1/5)
+* Add wrapper classes for return-request-id-to-caller
+* [microversions] Add support for 2.17
+* Allow restore command with name param
+* Updated from global requirements
+* [microversions] Extend shell with 2.12
+* Remove argparse from requirements
+* Added support for Nova microversion 2.16
+* Functional tests for os-services
+* Functional tests for flavors with public and non-public access
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Fix URLs for CLI Reference and API
+* Add functional tests launcher for py3 env
+* [microversions] Add support for 2.15
+* Updated from global requirements
+* Test: Clean v2 client userwarning
+* Fix broken link in documentation
+* Fix W503 line break before binary operator
+* Add a mechanism to call out deprecated options
+* Updated from global requirements
+* Replace assertTrue(isinstance()) by optimal assert
+
 3.2.0
 -----
 
 * Use assertTrue/False instead of assertEqual(T/F)
 * Add python 2.7 comment
+* [microversions] Add support for 2.14
 * Fix extension loading from python path on Python 2.7
 * Wrong usage of "a/an"
 * Fix help strings
 * Validate the fixed ip address passed with --nic
+* [microversions] Add support for API microversion 2.13
 * [microversions] share one object for shell arguments
 * Put py34 first in the env order of tox
 * Fixed test_shell which can't test microversions>=2.4
