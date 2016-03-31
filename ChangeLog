@@ -1,6 +1,13 @@
 CHANGES
 =======
 
+3.3.1
+-----
+
+* Remove console expectation from NMI tests
+* Fix host-evacuate-live for 2.25 microversion
+* Update .gitreview for stable/mitaka
+
 3.3.0
 -----
 
