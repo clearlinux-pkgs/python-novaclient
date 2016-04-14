@@ -1,16 +1,37 @@
 CHANGES
 =======
 
-3.3.1
+3.4.0
 -----
 
-* Remove console expectation from NMI tests
 * Fix host-evacuate-live for 2.25 microversion
-* Update .gitreview for stable/mitaka
+* Use keystoneclient python bindings for testing
+* Removed unused Oslo Incubator code
+* Adding tox support for bandit
+* aggregate-details changed to aggregate-show
+* Handle error response for webob>=1.6.0
+* Validate shutdown value of --block-device
+* Add changes-since support when list servers
+* Update reno for stable/mitaka
+* Wrap interface_list by proper resource class
+* nova add-secgroup help updated with secgroup id
+* Remove additional 'timeout' element
+* Make it clear that host-servers-migrate is a cold migration
+* Return a less dramatic message for public flavors
+* Remove unused code in tests/unit/v2/fakes.py
+* Fix a typo in novaclient/v2/hosts.py
+* Remove an unused method in novaclient/shell.py
+* Overwrite Usage class's get() function
+* Remove console expectation from NMI tests
+* Use novaclient/utils directly and remove openstack/common (4/4)
+* Use novaclient/utils directly and remove openstack/common
+* Use novaclient/utils directly and remove openstack/common (2/4)
+* Use novaclient/utils directly and remove openstack/common (1/4)
 
 3.3.0
 -----
 
+* The novaclient Python API doc keystoneauth example fixed
 * [microversion] Bump to 2.25
 * Support for abort an ongoing live migration
 * Add two server-migration commands and bump migration-list command
@@ -19,9 +40,11 @@ CHANGES
 * Adds missing internationalization for help message
 * [microversions] Enable 2.21
 * [microversions] fix help msg for versioned args
+* Prepare to move extension into core plugin
 * Use assertIsNone instead of assertEqual(None, ***)
 * Functional tests for trigger-crash-dump (microversion 2.17)
 * Fix string interpolation at logging call
+* Deprecate run_test.sh
 * Updated from global requirements
 * Add a way to discover only contrib extensions
 * [functional] Move code for boot vm to base testcase
