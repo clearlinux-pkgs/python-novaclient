@@ -1,9 +1,26 @@
 CHANGES
 =======
 
+4.0.0
+-----
+
+* Updated from global requirements
+* Deprecate image list/show/delete/update CLIs/APIs
+* Make functional tests work with v3 keystone
+* Updated from global requirements
+* Fix typos in docstrings and comments
+* Remove busted baremetal CLIs and API bindings
+* Updated from global requirements
+* Add default values for domain related options
+* Remove deprecated volume(snapshot) commands/bindings
+* Switch to 2.1 default api_version in v2.Client
+* [tests] initialize client objects inside setUp
+* Fix ServerGroup.NAME_ATTR
+
 3.4.0
 -----
 
+* Using glance 'image-list'/'image-show' in boot help message
 * Fix host-evacuate-live for 2.25 microversion
 * Use keystoneclient python bindings for testing
 * Removed unused Oslo Incubator code
@@ -265,7 +282,7 @@ CHANGES
 2.27.0
 ------
 
-* Allow to reboot multiple servers
+*  Allow to reboot multiple servers
 * Add method for better random name
 * Launch functional tests serially
 * Add mechanism to vm list to return all resources
@@ -639,7 +656,7 @@ CHANGES
 * Convert agent testing to httpretty
 * debug level logs should not be translated
 * Add missing dependent module gettextutils
-* Allow the default value of 1 to be set for boot multiple
+* Allow the default value of 1 to  be set for boot multiple
 * Add extension-list command for v3 API
 * Add mailmap entry
 * Some Help Messages Missing Translation Support
@@ -1208,7 +1225,7 @@ CHANGES
 * Fix usage-list date range to use UTC time
 * Show POST in debug with curl
 * Fixes doc string and string formatting
-* Add the image_id arg to volume create
+*     Add the image_id arg to volume create
 * Make region case insensitive
 * Fix PEP8 issues
 * Add -X to DELETE and PUT in debug mode
@@ -1282,10 +1299,6 @@ CHANGES
 * doc: fix and clarify the --meta option help
 * Lock pep8 at v1.1
 * Turn on verbose test output
-
-folsom-1
---------
-
 * Align tox.ini with standards
 * make nova bash-complete faster and more accurate
 * refactored --service_name to only work with compute calls and added --volume_service_name for volume calls
@@ -1322,10 +1335,6 @@ folsom-1
 * Adds NOVACLIENT_INSECURE option
 * Implement quota classes
 * Open Folsom
-
-essex-rc1
----------
-
 * Adding Console Log to CLI
 * Change CLIAuth arg names
 * Add suport for instance locking/unlocking
@@ -1336,10 +1345,6 @@ essex-rc1
 * Remove trailing whitespaces in regular file
 * Adds --ipv6 and --port to ssh convience command
 * Add --poll for long running actions
-
-essex-4
--------
-
 * Add support for volume types
 * Makes novaclient use the volumes endpoint
 * Fix for backward compatibility with stable/diablo flavors
@@ -1357,7 +1362,7 @@ essex-4
 * Fixes bug 924588: Remove proto-keystone client from novaclient
 * Fix bug 904364: Consistiently handle trailing '/' on URLs
 * Adding describe-resource subcommand
-* Add Accept: applicaton/json header to all service requests. Fixes bug 904436
+* Add Accept: applicaton/json header to all service requests.  Fixes bug 904436
 * Blueprint cli-auth: common cli args
 * Add --all_tenants option to 'nova list'
 * Adding live migration subcommand
@@ -1367,10 +1372,6 @@ essex-4
 * Fix datetime issue with usage_data
 * blueprint host-aggregates: client bindings
 * moves the "help" in the usage information of a wrong command to the correct position
-
-essex-3
--------
-
 * Implementing client for new x509 support in nova
 * Add flavor create/delete support
 * Add a 'usage' module and 'usage-list' cli command
@@ -1419,10 +1420,6 @@ essex-3
 * Accept 1 and 2 as version choices
 * Add support for RAX authentication
 * Align run_tests.sh with nova
-
-essex-2
--------
-
 * Switch versioning to common Nova versioning
 * Fix PEP8 error
 * Add MANIFEST.in and setup.cfg back
@@ -1447,7 +1444,7 @@ essex-2
 * Add support for specifying VIF networks while booting
 * Use a try/finally to ensure state restoration
 * Follow redirects when calling out to Keystone
-* Modified as per code-review comments: - Renaned snapshot to volume-snapshot - Created a new file for volume snapshots
+* Modified as per code-review comments:     - Renaned snapshot to volume-snapshot     - Created a new file for volume snapshots
 * few missing references to api_key
 * tests working
 * started
@@ -1460,7 +1457,7 @@ essex-2
 * corrected argument order and replaced tabs with spaces
 * resolved merge conflict
 * added a space after url
-* Added the option --insecure. This disables SSL certificate validation
+* Added the option --insecure.   This disables SSL certificate validation
 * Updated the novaclient shell to display the parent server id that the image came from
 * Fixed description for block_device_mapping parameter
 * minor fixes
@@ -1468,7 +1465,7 @@ essex-2
 * version update
 * minor tweaks and long overdue pep8
 * new service catalog semantics
-* Added support for listing/creating/deleting snapshots of nova volumes. Also implemented the supporting CLI commands. Requires the OS API extension, 'os-snapshots'
+* Added support for listing/creating/deleting snapshots of nova volumes. Also implemented the supporting CLI commands.     Requires the OS API extension, 'os-snapshots'
 * Updated volume-create command to accept an optional attribute, snapshot_id. This enables the user to create a volume from a snapshot
 * Fixes #133 -- Keystone Client fetches correct service type and endpoint
 * fix tests
@@ -1476,7 +1473,7 @@ essex-2
 * merged and fixed pshkitin's keypair work
 * doc improvements
 * Added support to specify more boot options
-* Updated volume attach/detach commands to accept server name (in addition to server id). Code review comments: https://github.com/rackspace/python-novaclient/pull/125/files#r169829
+* Updated volume attach/detach commands to accept server name (in addition to server id).     Code review comments:     https://github.com/rackspace/python-novaclient/pull/125/files#r169829
 * Booting server with specific key is implemented
 * Added commands to work with keypairs
 * make description consistent
@@ -1490,7 +1487,7 @@ essex-2
 * Add cli for floating ips
 * Added support to specify more boot options
 * Don't filter endpoints when filter_value is non-truthy
-* Added the following CLI commands to access nova volumes: volume-attach Attach a volume to a server. volume-create Add a new volume. volume-delete Remove a volume. volume-detach Detach a volume from a server. volume-list List all the volumes. volume-show Show details about a volume
+* Added the following CLI commands to access nova volumes:     volume-attach       Attach a volume to a server.     volume-create       Add a new volume.     volume-delete       Remove a volume.     volume-detach       Detach a volume from a server.     volume-list         List all the volumes.     volume-show         Show details about a volume
 * now uses tenantName vs. tenantId to auth
 * version bump
 * removed unicode casts
@@ -1498,7 +1495,7 @@ essex-2
 * new service catalog implementation
 * change auth cred format for keystone
 * Added methods to get, attach and detach volumes to/from running instances
-* Added support to access nova-volume api (v1.1 extension) - Only the basic functionality (create, delete, list) is implemented
+* Added support to access nova-volume api (v1.1 extension)     - Only the basic functionality (create, delete, list) is implemented
 * add todo to update doc strings so that they reflect extension/optional-ness
 * update doc strings
 * add key_name to servers.create
@@ -1574,8 +1571,8 @@ essex-2
 * Switch API path to match http://bazaar.launchpad.net/~tpatil/nova/os-security-groups/revision/1369
 * Fix API path
 * fix display_name references that should have been instance_name
-* removed fixed_ip from v1.1 shell. Use --ip instead. Fixed up rest of other search options from last commit
-* start add of --image, --flavor, --status, and --host options to 'list' command. also fix up differences with --name and --display_name compared to how nova implementation turned out
+* removed fixed_ip from v1.1 shell.  Use --ip instead.  Fixed up rest of other search options from last commit
+* start add of --image, --flavor, --status, and --host options to 'list' command.  also fix up differences with --name and --display_name compared to how nova implementation turned out
 * Security groups cleanups
 * Added redirect tests, changed wrong status in test_authenticate_success
 * Added self.auth_url updating, WrongResponse exception
@@ -1644,7 +1641,7 @@ essex-2
 * removed server dump after add/remove fixed-ip
 * version bump
 * fixed public private ip list
-* added various search options to list command. will need a version bump as i changed the 'list' api that nova uses. after version bump, my search nova branch will need pip-requires updated to match
+* added various search options to list command.  will need a version bump as i changed the 'list' api that nova uses.  after version bump, my search nova branch will need pip-requires updated to match
 * docs
 * added add/remove fixed_ip actions to servers
 * Clarify description so usage doesn't imply name is the only valid value
@@ -1655,7 +1652,7 @@ essex-2
 * Fixed unit tests
 * Implemented backup with rotation
 * for creating 'x' instances, min_count > max_count check was reversed make max/min_instances a little more sane by making them 'int' types fix issue where only specifying --min_instances didn't work
-* Due to how novaclient works, it tends to do a 'get' first on whatever ID you pass on command line. Then it does the real command, re-using the ID found in the 'get' call, instead of the initial ID that you specified (which may have been a UUID)
+* Due to how novaclient works, it tends to do a 'get' first on whatever ID you pass on command line.  Then it does the real command, re-using the ID found in the 'get' call, instead of the initial ID that you specified (which may have been a UUID)
 * Cleaned up the query_string generation for 'nova list' Made --recurse_zones not need an '=argument'
 * Added --recurse_zones option to 'list' Added --fixed_ip option to 'list' to find a particular instance by IP Fixed issue with 'show' when --recurse_zones=1 and specifying UUID
 * fixup
