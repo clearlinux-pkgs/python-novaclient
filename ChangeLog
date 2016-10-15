@@ -1,6 +1,123 @@
 CHANGES
 =======
 
+6.0.0
+-----
+
+* Fix test_trigger_crash_dump_in_locked_state_nonadmin test
+* Fixes TypeError on Client instantiation
+* Updated from global requirements
+* Updated from global requirements
+* Replace functions 'Dict.get' and 'del' with 'Dict.pop'
+* Removed unused 'install_venv' module
+* [functional] Do not discover same resources for every test
+* functional tests fail if cirros image not exist
+* Updated from global requirements
+* Pick first image if can't find the specific image
+* Add support for v2.37 and auto-allocated networking
+* Cap image API deprecated methods at 2.35
+* Cap baremetal python APIs at 2.35
+* Deprecate all the nova-network functions in the python API
+* Deprecate network-* commands and clamp to microversion 2.35
+* [functional] Skip tests if API doesn't support microversion
+* Updated from global requirements
+* Store api_version object in one place
+
+5.1.0
+-----
+
+* Add eggs to gitignore list
+* Use glanceclient for functional tests
+* Skip nova-network-only tests if using Neutron
+* Make wait_for_server_os_boot wait longer
+* Handle successful response in console functional tests
+* Use neutron for network name -> id resolution
+* Look up image names directly in glance
+* Move other-requirements.txt to bindep.txt
+* Make novaclient functional tests use pretty tox
+* Updated from global requirements
+* Added smaller flavors for novaclient functional tests to use
+* Split nic parsing out of _boot method
+* Fix boot --nic error message for v2.32 boundary
+* Updated from global requirements
+* Microversion 2.35 adds keypairs pagination support
+* Modify flatten method to display an empty dict
+* remove start_version arg for keypairs v2.10 shell
+* Added support for microversion 2.34
+* Add support for microversion 2.33
+* Fix python35 job failures
+* Refactor test_servers APIVersion setup
+* Updated from global requirements
+* Updated from global requirements
+* Remove discover from test-requirements
+* Change all test URLs to use example.com
+* Fix deprecation message for --volume-service-name
+
+5.0.0
+-----
+
+* Deprecate baremetal API and CLI interfaces
+* Add a missing i18n support
+* Correctly handle NOVACLIENT_INESCURE
+* Virtual device tagging client support
+* Update clouds.yaml.sample
+* Updated from global requirements
+* base.Resource not define __ne__() built-in function
+* Remove white space between print and ()
+* Clean up deprecated CLI options
+* functional: fix a deprecation warning in test_auth.TestAuthentication
+* functional: skip test_auth_via_keystone_vX if X is not available
+* Raise an exception in v2.client for direct_use
+* Add support for microversion 2.31
+* Updated from global requirements
+* Updated from global requirements
+* [functional] Fix wrong message in server description test
+* Deprecated the `--volume-service-name` option
+* Make it possible to list quotas with details
+* List system dependencies for running common tests
+* make string.letters python3 compatible
+* Updated from global requirements
+* Fix the help message for 'get-mks-console'
+* Add support for microversion 2.30
+* Add support for microversion 2.29
+* Updated from global requirements
+* [functional] make tests work with only keystone v3
+* Updated from global requirements
+* Update README to comply with Identity v3
+* Extend microversion stuff to support resource classes
+
+4.1.0
+-----
+
+* Added functional tests for server tags (microverison 2.26)
+* Add support for microversion 2.28
+* TrivialFix: Added missed value in string formatting
+* Log request_id for each api call
+* Functional tests for server's description
+* Updated from global requirements
+* Updated from global requirements
+* Update to microversion 2.27
+* Fix funtional test gate failure caused by keystone client change
+* Fix nova host-evacuate for v2.14
+* Updated from global requirements
+* Use tempes.lib instead of tempes_lib
+* Deprecate --tenant option from flavor-access-list
+* Added Support of microverison 2.26
+* Name and AZ should as be optional param on aggregate-update
+* Updated from global requirements
+* Update the home-page with developer documentation
+* Updated from global requirements
+* Updated from global requirements
+* Clean the duplicated columns for "nova network-list"
+* Updated from global requirements
+* [Trivial] change some functions in novaclient/utils.py to public
+* Add info for user_id in v2.10
+* Enhance descriptions for get and clear password
+* Add a note message for reboot
+* Decorate FakeHTTPClient with versions
+* Restrict positional arguments for Client
+* Use common find_server from v2.shell
+
 4.0.0
 -----
 
