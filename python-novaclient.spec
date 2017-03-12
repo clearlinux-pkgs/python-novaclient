@@ -6,7 +6,7 @@
 #
 Name     : python-novaclient
 Version  : 6.0.0
-Release  : 39
+Release  : 40
 URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-6.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-6.0.0.tar.gz
 Source99 : http://tarballs.openstack.org/python-novaclient/python-novaclient-6.0.0.tar.gz.asc
@@ -25,42 +25,12 @@ Requires: pbr
 Requires: requests
 Requires: simplejson
 Requires: six
-BuildRequires : Babel-python
-BuildRequires : Jinja2
-BuildRequires : Sphinx-python
-BuildRequires : keystoneauth1-python
-BuildRequires : markupsafe-python
-BuildRequires : msgpack-python-python
-BuildRequires : os-client-config-python
-BuildRequires : oslo.serialization-python
-BuildRequires : oslo.utils-python
-BuildRequires : oslosphinx-python
+BuildRequires : configparser-python
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : pluggy
-BuildRequires : positional-python
-BuildRequires : prettytable
-BuildRequires : py-python
-BuildRequires : pyparsing-python
-BuildRequires : pytest
 BuildRequires : python-dev
-BuildRequires : python-keystoneclient-python
-BuildRequires : python-mock-python
 BuildRequires : python3-dev
-BuildRequires : reno-python
-BuildRequires : requests-mock-python
-BuildRequires : requests-python
 BuildRequires : setuptools
-BuildRequires : simplejson
-BuildRequires : six
-BuildRequires : six-python
-BuildRequires : tempest-lib-python
-BuildRequires : testrepository-python
-BuildRequires : testscenarios
-BuildRequires : testtools
-BuildRequires : testtools-python
-BuildRequires : tox
-BuildRequires : virtualenv
 Patch1: 0001-Allow-image-ID-to-passed-in-directly.patch
 Patch2: fast-poll.patch
 
@@ -91,17 +61,12 @@ python components for the python-novaclient package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1487882400
+export SOURCE_DATE_EPOCH=1489336693
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
-%check
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1487882400
+export SOURCE_DATE_EPOCH=1489336693
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
