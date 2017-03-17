@@ -1,10 +1,112 @@
 CHANGES
 =======
 
+7.1.0
+-----
+
+* Add release not for fixing token auth method
+* Fix functional tests to deal with multiple networks
+* ListExtResource given in place of ListExtManager
+* Pass relevant parameters to Token based authentication
+* Updated from global requirements
+* x-openstack-request-id logged twice in logs
+* Add profiling support to novaclient
+* Fix help strings
+* Make _console() public
+* Allow multiple tag add/delete from cli
+* Updated from global requirements
+* Enable coverage report in console output
+* Fix "Message object do not support addition"
+* Add support for showing aggregate UUIDs (v2.41)
+* Blacklist rather than whitelist autodoc modules
+
+7.0.0
+-----
+
+* Clarify some release notes prior to the 7.0.0 release
+* Replaces uuid.uuid4 with uuidutils.generate_uuid()
+* Microversion 2.40 - Simple tenant usage pagination
+* Fixed the __ne__ implementation in base.Resource
+* Add some missing modules in API reference
+* Deprecate volume_service_name argument
+* [proxy-api] microversion 2.39 deprecates image-metadata proxy API
+* Remove all code related to HTTPClient
+* Create keystone session instance if not present
+* Make SessionClient interface similar to HTTPClient
+* Deprecate connection_pool variable
+* Transmit all auth related vars from cli to inner methods
+* Deprecate proxy_token and proxy_tenant_id args
+* Clarify meaning of project_id var
+* Rename interface to endpoint_type
+* Rename api_key to password
+* Rename bypass_url to endpoint_override
+* Remove redundant args of _construct_http_client
+* Introduce helper for checking args deprecation
+* Sort arguments for client's methods
+* Updated from global requirements
+* Remove internal attribute access from shell
+* Add limit and offset to server-groups list
+* Restict usage *args for novaclient.client.Client
+* Add version pin for image list function
+* CONF.osapi_max_limit -> CONF.api.max_limit
+* Replace six.iteritems() with .items()
+* Usage missing from generated docs
+* remove variable '_' from tests
+* Add min-disk and min-ram filters to list flavors
+* Fix doc generation errors
+* Check source_type and destination_type when booting with bdm provided
+* Updated from global requirements
+* Fix can't process the resource with name 'help'
+* Use more specific asserts in tests
+* Revert "Microversion 2.39 - Simple tenant usage pagination"
+* Updated from global requirements
+* Microversion 2.39 - Simple tenant usage pagination
+* Move all extensions from contrib dir
+* Use upper-constraints when running tox
+* Correct copy/paste errors in help
+* Show team and repo badges on README
+* Fix import statement order
+* Remove unused test code
+* Remove unused code
+* Fix the description of hypervisors.list
+* Change fake server id as str to fit real server id type
+* modified the description of service.list
+* Add version pin for image related function
+* Updated from global requirements
+* Bump client microversion to 2.38
+* Replace oslo_utils.timeutils.isotime
+* Updated from global requirements
+* Updated from global requirements
+* Add Python 3.5 classifier and venv
+* Updated from global requirements
+* Remove support for non-keystone auth systems
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Make "policy" a mandatory argument for server-group-create
+* Update docs for instructions on deprecating commands
+* Remove unused helper volume methods in v2 shell
+* Remove deprecated commands
+* Add timezone disclaimer to docstring
+* Enable release notes translation
+* Clean up requests-mock usage
+* Replace requests mocking with requests-mock
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Update reno for stable/newton
+* Fix incorrect output of "nova show" for long user data
+* Modify use of assertTrue(A in B)
+* Updated from global requirements
+
 6.0.0
 -----
 
 * Fix test_trigger_crash_dump_in_locked_state_nonadmin test
+* Fix 'UnicodeEncodeError' for unicode values
 * Fixes TypeError on Client instantiation
 * Updated from global requirements
 * Updated from global requirements
