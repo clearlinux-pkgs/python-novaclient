@@ -1,6 +1,49 @@
 CHANGES
 =======
 
+8.0.0
+-----
+
+* Remove deprecated network APIs
+* Update Compute API Guide pointer
+* Fix 'nova list --fields' error in no instances case
+* Remove log translations
+* Updated from global requirements
+* Imported Translations from Zanata
+* Set test timout to 300 seconds
+* Drop deprecated aggregate-update positional args
+* Remove deprecated floating_ips APIs
+* Remove deprecated fixed_ips APIs
+* Remove deprecated security_groups APIs
+* Remove deprecated security_group_rules APIs
+* Remove deprecated security_group_default_rules APIs
+* Remove the deprecated fping API
+* Remove deprecated floating_ip_pools API
+* Remove deprecated floating_ips_bulk API
+* Remove deprecated floating IP DNS domain/entry APIs
+* Remove deprecated tenant network APIs
+* Remove deprecated baremetal CLIs and APIs
+* Remove py34 tox env and pypi classifier
+* Fix aggregate_update name and availability_zone clash
+* Use Sphinx 1.5 warning-is-error
+* Remove duplicate methods
+* Fix ValueError when incorrect metadata passed
+* Updated from global requirements
+* Tags and Metadata fields with unicode cannot be correctly displayed
+* [Fix gate]Update test requirement
+* Release note for cell_name deprecation
+* Remove functional tests for removed commands
+* Deperecate cell_name cli arg for migration-list
+* Updated from global requirements
+* Grammar typo in the comments for function set_meta
+* Fix devstack python-novaclient warning
+* Remove deprecated network-related resource commands
+* Remove deprecated image commands/API bindings
+* Add functional test for "nova boot --image-with"
+* Updated from global requirements
+* Updated from global requirements
+* Update reno for stable/ocata
+
 7.1.0
 -----
 
