@@ -6,7 +6,7 @@
 #
 Name     : python-novaclient
 Version  : 8.0.0
-Release  : 42
+Release  : 43
 URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-8.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-8.0.0.tar.gz
 Source99 : http://tarballs.openstack.org/python-novaclient/python-novaclient-8.0.0.tar.gz.asc
