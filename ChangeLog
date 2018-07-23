@@ -1,41 +1,243 @@
 CHANGES
 =======
 
+10.3.0
+------
+
+* Add a note in the nova CLI reference about using OSC
+* Import nova CLI reference from openstack-manuals
+* Revert "Fix listing of instances above API max\_limit"
+* Fix the incorrect cirros default password
+* Fix the policy argument in server-group-create
+* Make sure microversion < 2.62 does not show host(Id) for instance actions
+* Microversion 2.62 - Add host/hostId to instance action event
+* Trivial: Update pypi url to new url
+
+10.2.0
+------
+
+* [CLI] Fix token auth type
+* Microversion 2.61 - support extra\_specs in flavor API
+* Fix comments in novaclient/tests/unit/fakes.py
+* Stop printing flavor details on successful flavor-delete
+* Replace GB with GiB
+* Fix AttributeError in getting a resource ID
+* Fix validation for command arguments
+* Updated from global requirements
+* add lower-constraints job
+* Fix local test fails with pypy
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Add os-testr in test-requirements.txt
+* Fix a comment in novaclient/api\_versions.py
+* Clean imports in code
+* Fix the docstring for the update method
+* Updated from global requirements
+* Updated from global requirements
+* Remove 2 redundant methods
+* Fix crashing console-log
+* Fix listing of instances above API max\_limit
+* nova limits ERROR (Exception): Field names must be unique
+* Zuul: Remove project name
+* Implement hypervisor hostname exact pattern match
+* Add CLI to show instance usage audit logs
+* Update reno for stable/queens
+* Updated from global requirements
+
+10.1.0
+------
+
+* Add support for microversion 2.60 - volume multiattach
+* Microversion 2.59 - Migrations list pagination
+* Update documentation links
+* Updated from global requirements
+* Add missing spaces in \`nova list --changes-since\` help
+* Microversion 2.58 - Instance actions list pagination
+* Add support for the 2.57 microversion
+
+10.0.0
+------
+
+* Remove deprecated services binary CLI arg
+* Remove deprecated fixedip/floatingip/virtual interface CLIs/APIs
+* Remove deprecated os-hosts CLIs and python API bindings
+* Remove deprecated cloudpipe CLIs and python API bindings
+* Remove deprecated certs CLIs and python bindings
+* Remove deprecated MigrationManager.list cell\_name kwarg
+* Fix being able to create a reno using tox -e venv
+* Remove incorrect legacy QuotaSet.id property
+* Updated from global requirements
+* boot: error out if no images match the property from --image-with
+* Update new documentation PTI jobs
+* boot: show warning if more than one match when setting --image-with
+* Remove irrelevant note
+* flavor create: clarify --swap description
+* Updated from global requirements
+* Updated from global requirements
+* Optimize jobs run on novaclient
+* Remove deprecated command in nova.rst
+* CommandError is raised for invalid server fields
+* inject file: add method of showing quota value of injecting files for 'rebuild' command
+* Updated from global requirements
+* Microversion 2.56 - Enable cold migration with target host
+* Avoid tox\_install.sh for constraints support
+* inject file: add description of injecting multiple files
+* [ci] Use pseudo-random names for new resources
+* Add support for microversion 2.55 - flavor description
+* Use utils.prepare\_query\_string instead of duplicated code
+* Move zuulv3 jobs to project repo
+* [functional] Remove duplication of boot helper
+* Microversion 2.54 - Enable reset keypair while rebuild
+* Remove setting of version/release from releasenotes
+* Remove SecretsHelper
+* Stop posting to os-volumes\_boot
+* Updated from global requirements
+* Fix missing metavar in aggregate-update
+* Updated from global requirements
+* Updated from global requirements
+* Use generic user for both zuul v2 and v3
+* Update "The nova Shell Utility" in the user guide
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Allow boot server with multiple nics
+* Remove substitutions for command error msg
+* tools: Remove dead script
+* Updated from global requirements
+* Fix reservation\_id not supported by Nova API
+* Replace six.itervalues() with dict.values() in python-novaclient
+* Update reno for stable/pike
+* Updated from global requirements
+* Remove run\_tests.sh
+* Update URLs in docs, comments and setup.cfg
+* Updated from global requirements
+
+9.1.0
+-----
+
+* doc: Remove Makefile
+* Allow tuple as for nics value
+* Help text for "--matching" is not clear
+* Be clear about hypevisors.search used in a few CLIs
+* Change Service repr to use self.id always
+* Microversion 2.53 - services and hypervisors using UUIDs
+* Add 'Forced down' column in serivce-list
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Expect id and disabled\_reason in GET /os-services response
+* Updated from global requirements
+* Adjust test\_resize\_down\_revert to account for counting quotas
+* Updated from global requirements
+* Microversion 2.52 - Support tag when boot
+* Updated from global requirements
+* Fix the inappropriate parameter name
+* Add resize down test which also verifies quota changes
+* Add functional test for resize-confirm plus quota validation
+* Add support for the 2.51 microversion
+* Microversion 2.50 - fix quota class sets resource usage
+* Updated from global requirements
+* Remove custom autodoc implementation
+* doc: Switch from oslosphinx to openstackdocstheme
+* doc: Create directory structure for docs migration
+* Microversion 2.49 - Virt device tagged attach
+* Fix cropping the endpoint url
+* Removed extra word 'method' from the NOTE
+* Deprecate binary argument in nova service enable/disable/force-down CLIs
+* Updated from global requirements
+* Microversion 2.48: Standardization of VM diagnostics
+* 2.47: Show flavor info in server details
+* Cleanup duplicated methods
+* Make --profile load from environment variables
+
+9.0.1
+-----
+
+* Revert "client.logger.warning wrongly used in migrations"
+* Clean up ShellTest unit tests
+* Fix setting 'global\_request\_id' in SessionClient
+
+9.0.0
+-----
+
+* Updated from global requirements
+* Prevent 2.32 release note from showing up in 9.0.0 release notes
+* Skip rebuild functional test due to persistent vif plugging timeout
+* strip the remote prefixes from the release note branch specifiers
+* 2.46: match nova API version
+* Help message for aggregate-update is ambiguous
+* client.logger.warning wrongly used in migrations
+* Better handle key=value pair not being key=value
+* Error out if nic auto or none are not alone
+* Updated from global requirements
+* Have python-novaclient support global\_request\_id
+* Updated from global requirements
+* Remove various deprecated options
+* Updated from global requirements
+* Updated from global requirements
+* Fix help message and description for volume-update
+* Fix warning for deprecated cert commands
+* Mark cloudpipe deprecated in novaclient
+* Fix a typo
+* Updated from global requirements
+* Updated from global requirements
+* Remove 1.1 extension comment
+* 2.45: createImage/createBackup image\_id is in response body
+* 2.44: Deprecate multinic/floatingIP actions and os-virtual-interfaces
+* 2.43: Deprecate novaclient /os-hosts usage
+* Add \`instance-uuid\` flag to the migration-list
+* Remove direct dependency on requests
+* Microversion 2.42 - Fix tag attribute disappearing
+* doc: Remove cruft from conf.py
+* Explicitly set 'builders' option
+* Add novaclient client\_name and client\_version to user-agent
+* Updated from global requirements
+* Fix cinder volume leakage
+* Updated from global requirements
+* Deprecate certs commands and APIs
+* Revise \`nova list\` description
+* Update reno for removed network CLIs
+
 8.0.0
 -----
 
 * Remove deprecated network APIs
 * Update Compute API Guide pointer
 * Fix 'nova list --fields' error in no instances case
+* Explicitly specify arguments of server\_groups creation
+* Remove version 1.1 support
 * Remove log translations
 * Updated from global requirements
 * Imported Translations from Zanata
 * Set test timout to 300 seconds
 * Drop deprecated aggregate-update positional args
-* Remove deprecated floating_ips APIs
-* Remove deprecated fixed_ips APIs
-* Remove deprecated security_groups APIs
-* Remove deprecated security_group_rules APIs
-* Remove deprecated security_group_default_rules APIs
+* Remove deprecated floating\_ips APIs
+* Remove deprecated fixed\_ips APIs
+* Remove deprecated security\_groups APIs
+* Remove deprecated security\_group\_rules APIs
+* Remove deprecated security\_group\_default\_rules APIs
 * Remove the deprecated fping API
-* Remove deprecated floating_ip_pools API
-* Remove deprecated floating_ips_bulk API
+* Remove deprecated floating\_ip\_pools API
+* Remove deprecated floating\_ips\_bulk API
 * Remove deprecated floating IP DNS domain/entry APIs
 * Remove deprecated tenant network APIs
 * Remove deprecated baremetal CLIs and APIs
 * Remove py34 tox env and pypi classifier
-* Fix aggregate_update name and availability_zone clash
+* Fix aggregate\_update name and availability\_zone clash
 * Use Sphinx 1.5 warning-is-error
 * Remove duplicate methods
 * Fix ValueError when incorrect metadata passed
 * Updated from global requirements
 * Tags and Metadata fields with unicode cannot be correctly displayed
 * [Fix gate]Update test requirement
-* Release note for cell_name deprecation
+* Release note for cell\_name deprecation
 * Remove functional tests for removed commands
-* Deperecate cell_name cli arg for migration-list
+* Deperecate cell\_name cli arg for migration-list
 * Updated from global requirements
-* Grammar typo in the comments for function set_meta
+* Grammar typo in the comments for function set\_meta
 * Fix devstack python-novaclient warning
 * Remove deprecated network-related resource commands
 * Remove deprecated image commands/API bindings
@@ -55,7 +257,7 @@ CHANGES
 * x-openstack-request-id logged twice in logs
 * Add profiling support to novaclient
 * Fix help strings
-* Make _console() public
+* Make \_console() public
 * Allow multiple tag add/delete from cli
 * Updated from global requirements
 * Enable coverage report in console output
@@ -67,37 +269,37 @@ CHANGES
 -----
 
 * Clarify some release notes prior to the 7.0.0 release
-* Replaces uuid.uuid4 with uuidutils.generate_uuid()
+* Replaces uuid.uuid4 with uuidutils.generate\_uuid()
 * Microversion 2.40 - Simple tenant usage pagination
-* Fixed the __ne__ implementation in base.Resource
+* Fixed the \_\_ne\_\_ implementation in base.Resource
 * Add some missing modules in API reference
-* Deprecate volume_service_name argument
+* Deprecate volume\_service\_name argument
 * [proxy-api] microversion 2.39 deprecates image-metadata proxy API
 * Remove all code related to HTTPClient
 * Create keystone session instance if not present
 * Make SessionClient interface similar to HTTPClient
-* Deprecate connection_pool variable
+* Deprecate connection\_pool variable
 * Transmit all auth related vars from cli to inner methods
-* Deprecate proxy_token and proxy_tenant_id args
-* Clarify meaning of project_id var
-* Rename interface to endpoint_type
-* Rename api_key to password
-* Rename bypass_url to endpoint_override
-* Remove redundant args of _construct_http_client
+* Deprecate proxy\_token and proxy\_tenant\_id args
+* Clarify meaning of project\_id var
+* Rename interface to endpoint\_type
+* Rename api\_key to password
+* Rename bypass\_url to endpoint\_override
+* Remove redundant args of \_construct\_http\_client
 * Introduce helper for checking args deprecation
 * Sort arguments for client's methods
 * Updated from global requirements
 * Remove internal attribute access from shell
 * Add limit and offset to server-groups list
-* Restict usage *args for novaclient.client.Client
+* Restict usage \*args for novaclient.client.Client
 * Add version pin for image list function
-* CONF.osapi_max_limit -> CONF.api.max_limit
+* CONF.osapi\_max\_limit -> CONF.api.max\_limit
 * Replace six.iteritems() with .items()
 * Usage missing from generated docs
-* remove variable '_' from tests
+* remove variable '\_' from tests
 * Add min-disk and min-ram filters to list flavors
 * Fix doc generation errors
-* Check source_type and destination_type when booting with bdm provided
+* Check source\_type and destination\_type when booting with bdm provided
 * Updated from global requirements
 * Fix can't process the resource with name 'help'
 * Use more specific asserts in tests
@@ -117,7 +319,7 @@ CHANGES
 * Add version pin for image related function
 * Updated from global requirements
 * Bump client microversion to 2.38
-* Replace oslo_utils.timeutils.isotime
+* Replace oslo\_utils.timeutils.isotime
 * Updated from global requirements
 * Updated from global requirements
 * Add Python 3.5 classifier and venv
@@ -148,13 +350,13 @@ CHANGES
 6.0.0
 -----
 
-* Fix test_trigger_crash_dump_in_locked_state_nonadmin test
+* Fix test\_trigger\_crash\_dump\_in\_locked\_state\_nonadmin test
 * Fix 'UnicodeEncodeError' for unicode values
 * Fixes TypeError on Client instantiation
 * Updated from global requirements
 * Updated from global requirements
 * Replace functions 'Dict.get' and 'del' with 'Dict.pop'
-* Removed unused 'install_venv' module
+* Removed unused 'install\_venv' module
 * [functional] Do not discover same resources for every test
 * functional tests fail if cirros image not exist
 * Updated from global requirements
@@ -163,10 +365,10 @@ CHANGES
 * Cap image API deprecated methods at 2.35
 * Cap baremetal python APIs at 2.35
 * Deprecate all the nova-network functions in the python API
-* Deprecate network-* commands and clamp to microversion 2.35
+* Deprecate network-\* commands and clamp to microversion 2.35
 * [functional] Skip tests if API doesn't support microversion
 * Updated from global requirements
-* Store api_version object in one place
+* Store api\_version object in one place
 
 5.1.0
 -----
@@ -174,7 +376,7 @@ CHANGES
 * Add eggs to gitignore list
 * Use glanceclient for functional tests
 * Skip nova-network-only tests if using Neutron
-* Make wait_for_server_os_boot wait longer
+* Make wait\_for\_server\_os\_boot wait longer
 * Handle successful response in console functional tests
 * Use neutron for network name -> id resolution
 * Look up image names directly in glance
@@ -182,16 +384,16 @@ CHANGES
 * Make novaclient functional tests use pretty tox
 * Updated from global requirements
 * Added smaller flavors for novaclient functional tests to use
-* Split nic parsing out of _boot method
+* Split nic parsing out of \_boot method
 * Fix boot --nic error message for v2.32 boundary
 * Updated from global requirements
 * Microversion 2.35 adds keypairs pagination support
 * Modify flatten method to display an empty dict
-* remove start_version arg for keypairs v2.10 shell
+* remove start\_version arg for keypairs v2.10 shell
 * Added support for microversion 2.34
 * Add support for microversion 2.33
 * Fix python35 job failures
-* Refactor test_servers APIVersion setup
+* Refactor test\_servers APIVersion setup
 * Updated from global requirements
 * Updated from global requirements
 * Remove discover from test-requirements
@@ -203,21 +405,21 @@ CHANGES
 
 * Deprecate baremetal API and CLI interfaces
 * Add a missing i18n support
-* Correctly handle NOVACLIENT_INESCURE
+* Correctly handle NOVACLIENT\_INESCURE
 * Virtual device tagging client support
 * Update clouds.yaml.sample
 * Updated from global requirements
-* base.Resource not define __ne__() built-in function
+* base.Resource not define \_\_ne\_\_() built-in function
 * Remove white space between print and ()
 * Clean up deprecated CLI options
-* functional: fix a deprecation warning in test_auth.TestAuthentication
-* functional: skip test_auth_via_keystone_vX if X is not available
-* Raise an exception in v2.client for direct_use
+* functional: fix a deprecation warning in test\_auth.TestAuthentication
+* functional: skip test\_auth\_via\_keystone\_vX if X is not available
+* Raise an exception in v2.client for direct\_use
 * Add support for microversion 2.31
 * Updated from global requirements
 * Updated from global requirements
 * [functional] Fix wrong message in server description test
-* Deprecated the `--volume-service-name` option
+* Deprecated the \`--volume-service-name\` option
 * Make it possible to list quotas with details
 * List system dependencies for running common tests
 * make string.letters python3 compatible
@@ -237,7 +439,7 @@ CHANGES
 * Added functional tests for server tags (microverison 2.26)
 * Add support for microversion 2.28
 * TrivialFix: Added missed value in string formatting
-* Log request_id for each api call
+* Log request\_id for each api call
 * Functional tests for server's description
 * Updated from global requirements
 * Updated from global requirements
@@ -245,7 +447,7 @@ CHANGES
 * Fix funtional test gate failure caused by keystone client change
 * Fix nova host-evacuate for v2.14
 * Updated from global requirements
-* Use tempes.lib instead of tempes_lib
+* Use tempes.lib instead of tempes\_lib
 * Deprecate --tenant option from flavor-access-list
 * Added Support of microverison 2.26
 * Name and AZ should as be optional param on aggregate-update
@@ -256,12 +458,12 @@ CHANGES
 * Clean the duplicated columns for "nova network-list"
 * Updated from global requirements
 * [Trivial] change some functions in novaclient/utils.py to public
-* Add info for user_id in v2.10
+* Add info for user\_id in v2.10
 * Enhance descriptions for get and clear password
 * Add a note message for reboot
 * Decorate FakeHTTPClient with versions
 * Restrict positional arguments for Client
-* Use common find_server from v2.shell
+* Use common find\_server from v2.shell
 
 4.0.0
 -----
@@ -275,9 +477,9 @@ CHANGES
 * Updated from global requirements
 * Add default values for domain related options
 * Remove deprecated volume(snapshot) commands/bindings
-* Switch to 2.1 default api_version in v2.Client
+* Switch to 2.1 default api\_version in v2.Client
 * [tests] initialize client objects inside setUp
-* Fix ServerGroup.NAME_ATTR
+* Fix ServerGroup.NAME\_ATTR
 
 3.4.0
 -----
@@ -292,7 +494,7 @@ CHANGES
 * Validate shutdown value of --block-device
 * Add changes-since support when list servers
 * Update reno for stable/mitaka
-* Wrap interface_list by proper resource class
+* Wrap interface\_list by proper resource class
 * nova add-secgroup help updated with secgroup id
 * Remove additional 'timeout' element
 * Make it clear that host-servers-migrate is a cold migration
@@ -320,10 +522,10 @@ CHANGES
 * [microversions] Enable 2.21
 * [microversions] fix help msg for versioned args
 * Prepare to move extension into core plugin
-* Use assertIsNone instead of assertEqual(None, ***)
+* Use assertIsNone instead of assertEqual(None, \*\*\*)
 * Functional tests for trigger-crash-dump (microversion 2.17)
 * Fix string interpolation at logging call
-* Deprecate run_test.sh
+* Deprecate run\_test.sh
 * Updated from global requirements
 * Add a way to discover only contrib extensions
 * [functional] Move code for boot vm to base testcase
@@ -331,13 +533,13 @@ CHANGES
 * [microversions] Turn off check for header in response
 * [microversions] Add support for 2.19
 * Allow to specify a network for functional tests
-* Provide user with coherent interface to get request_ids
+* Provide user with coherent interface to get request\_ids
 * [microversions] Skip microversion 2.18
 * Fix running functional tests against deployment with insecure SSL
 * Updated from global requirements
-* Make _poll_for_status more user-friendly
-* Fix omission of request_ids returned to user
-* Remove unnecessary filter from Resource's __repr__() function
+* Make \_poll\_for\_status more user-friendly
+* Fix omission of request\_ids returned to user
+* Remove unnecessary filter from Resource's \_\_repr\_\_() function
 * Use # noqa to ignore one line but not whole file
 * Add release notes for return-request-id-to-caller
 * Update translation setup
@@ -383,9 +585,9 @@ CHANGES
 * [microversions] Add support for API microversion 2.13
 * [microversions] share one object for shell arguments
 * Put py34 first in the env order of tox
-* Fixed test_shell which can't test microversions>=2.4
+* Fixed test\_shell which can't test microversions>=2.4
 * Updated from global requirements
-* document search_opts parameter
+* document search\_opts parameter
 * Cleanup needless code from oslo-incubator
 
 3.1.0
@@ -412,15 +614,15 @@ CHANGES
 * [microversions] Increase max version to 2.12
 * [microversions] Increase max version to 2.11
 * [microversions] Add support for 2.10
-* [microversions] update test_versions with implemented versions
+* [microversions] update test\_versions with implemented versions
 * encode the url parameters
 * Fix H404/405 violations in novaclient/v2/[a-f]
-* Fix H404/405 violations in novaclient/tests/*
+* Fix H404/405 violations in novaclient/tests/\*
 * Fix multiline string with missing space
 * [microversions] Increase max version to 2.9
 * [microversions] Add support for 2.8
 * Enable pass instance name as parameter in nova cli
-* Fix H404/405 violations in client.py,base.py,api_version.py
+* Fix H404/405 violations in client.py,base.py,api\_version.py
 * Help msg about libvirt always default device names
 * Fix a Typo in Docstring
 * Updated from global requirements
@@ -448,13 +650,13 @@ CHANGES
 * Added command for device to cinder volume mapping
 * Functional tests for os-extended-server-attributes
 * Remove --tenant suggestion for flavor-access-list
-* Add v2 support for optional project_id in version discovery urls
-* Remove novaclient.v1_1 module
+* Add v2 support for optional project\_id in version discovery urls
+* Remove novaclient.v1\_1 module
 
 2.34.0
 ------
 
-* Revert "Remove novaclient.v1_1 module"
+* Revert "Remove novaclient.v1\_1 module"
 * Revert "Do not expose exceptions from requests library"
 * Check flavor option before image checks
 * Updated from global requirements
@@ -463,15 +665,15 @@ CHANGES
 ------
 
 * Do not expose exceptions from requests library
-* make project_id optional in urls for version discovery
+* make project\_id optional in urls for version discovery
 * Support the server side remote-console API changes
-* Correct usage of API_MAX_VERSION and DEFAULT_OS_COMPUTE_API_VERSION
+* Correct usage of API\_MAX\_VERSION and DEFAULT\_OS\_COMPUTE\_API\_VERSION
 * Rely on devstack for clouds.yaml
 * Refactor parsing metadata to a common function
 * Updated from global requirements
 * Updated from global requirements
-* Use v2.0 in clouds.yaml auth_url for functional test job
-* Add sort_dir/key to flavor list
+* Use v2.0 in clouds.yaml auth\_url for functional test job
+* Add sort\_dir/key to flavor list
 * Add pagination params for flavor list
 * Increase timeout when testing admin timeout
 * Fix incorrect help for 'nova flavor-create'
@@ -482,31 +684,31 @@ CHANGES
 * Revert "Allow display project-id for server groups"
 * Test that microversions are not skipped
 * Updated from global requirements
-* Set DEFAULT_OS_COMPUTE_API_VERSION to 2.5
+* Set DEFAULT\_OS\_COMPUTE\_API\_VERSION to 2.5
 
 2.31.0
 ------
 
-* Always send volume_id when booting with legacy bdm
-* Change default service_type for volumes managers
+* Always send volume\_id when booting with legacy bdm
+* Change default service\_type for volumes managers
 * Add --metadata as optional input when do nova image-create
-* Remove novaclient.v1_1 module
+* Remove novaclient.v1\_1 module
 * Use dictionary literal for dictionary creation
 
 2.30.0
 ------
 
-* Change ignore-errors to ignore_errors
+* Change ignore-errors to ignore\_errors
 * Modify nova help list message for --tenant
 * Split functional tests for legacy(V2.1) and microversions
-* Specify api_version for functional tests
+* Specify api\_version for functional tests
 * Improve help strings
 * Updated from global requirements
 * Encode unicode filter arguments for server list
 * [docs] Fix length of underline
 * Updated from global requirements
 * Fix nova bash-completion needs authentication
-* Show reserved status for a fixed_ip if available
+* Show reserved status for a fixed\_ip if available
 * Fix unicode issue in shell.main() error handling
 * Remove redundant help command test and commonize
 * Fix the homepage url in setup.cfg
@@ -516,10 +718,10 @@ CHANGES
 2.29.0
 ------
 
-* make sure os_password is set for auth_plugins
+* make sure os\_password is set for auth\_plugins
 * [BugFix] Change parameters for legacy bdm
-* Set api_version to 2.0 by default for v2.Client
-* Deprecate 'novaclient.client.get_client_class'
+* Set api\_version to 2.0 by default for v2.Client
+* Deprecate 'novaclient.client.get\_client\_class'
 * Restrict direct usage of novaclient.v2.client
 * Fix bugs with rackspace
 * Add unit tests for different help commands
@@ -538,7 +740,7 @@ CHANGES
 * workaround for RAX repose configuration
 * fix novaclient functional tests for new devstack config
 * Don't assume oscomputeversions is correctly deployed
-* Update path to subunit2html in post_test_hook
+* Update path to subunit2html in post\_test\_hook
 * Option to specify max servers for live evacuate
 
 2.27.0
@@ -560,20 +762,20 @@ CHANGES
 * Updated from global requirements
 * Updated from global requirements
 * Add ability to use default major version
-* Copy cli arguments in api_versions.wraps decorator
-* Change docstring of api_versions.discover_version
+* Copy cli arguments in api\_versions.wraps decorator
+* Change docstring of api\_versions.discover\_version
 * Allow display project-id for server groups
-* Remove _discover_extensions
+* Remove \_discover\_extensions
 * Updated from global requirements
 * Support forcing service down
 * Adds support for x509 certificates as keypairs
 * Set "latest" as default compute api version
 * Add version discover and check in CLI
 * Specify NIC option for nova boot
-* Refactor and update test_instances and test_volumes_api
+* Refactor and update test\_instances and test\_volumes\_api
 * Use keystoneclient's TCPKeepAliveAdapter
-* Add 'deleted' status check in _poll_for_status
-* Add "get_current" method to VersionManager
+* Add 'deleted' status check in \_poll\_for\_status
+* Add "get\_current" method to VersionManager
 * Implements 'microversions' api type - Part 2
 * Fixes table when there are multiline in result data
 * rename root-password to set-password
@@ -595,7 +797,7 @@ CHANGES
 * Updated from global requirements
 * Revert "Allow admin user to get all tenant's floating IPs"
 * Add a sample clouds.yaml
-* Pass full path to pkgutil.iter_modules()
+* Pass full path to pkgutil.iter\_modules()
 * Cache a new token when the existing token expires
 * Add help message for secgroup-add/del-default-rule
 * Cleanup various inaccuracies in the README.rst
@@ -614,19 +816,19 @@ CHANGES
 * Deprecate volume/volume-type/volume-snapshot CRUD CLIs/APIs
 * Do not check requirements when loading entry points
 * Eliminate test comprehensions
-* Remove redundant check for version of `requests`
+* Remove redundant check for version of \`requests\`
 * Use clouds.yaml for functional test credentials
 * pass credentials via config file instead of magic
-* server-group-list support 'all_projects' parameter
+* server-group-list support 'all\_projects' parameter
 
 2.25.0
 ------
 
 * Drop use of 'oslo' namespace package
-* Reuse uuidutils frim oslo_utils
+* Reuse uuidutils frim oslo\_utils
 * Sync latest code from oslo-incubator
 * Updated from global requirements
-* Make _discover_extensions public
+* Make \_discover\_extensions public
 * Updated from global requirements
 * nova client now support limits subcommand
 * Don't use SessionClient for version-list API
@@ -637,11 +839,11 @@ CHANGES
 ------
 
 * fix FloatingIP repr
-* Don't lookup service url when bypass_url is given
+* Don't lookup service url when bypass\_url is given
 * Revert "nova flavor-show command is inconsistent"
 * add ips to novaclient server manager
 * Update README to work with release tools
-* refactor functional test base class to no inherit from tempest_lib
+* refactor functional test base class to no inherit from tempest\_lib
 
 2.24.0
 ------
@@ -671,7 +873,7 @@ CHANGES
 * Add a test for the TCPKeepAliveAdapter
 * Update help message for nova boot --file
 * Fix typo in socket attribute name
-* nova client cinder query param changed to display_name
+* nova client cinder query param changed to display\_name
 * nova flavor-show command is inconsistent
 * Update help messages for default security group commands
 * Add functional testing README
@@ -679,7 +881,7 @@ CHANGES
 * Updated from global requirements
 * Cleanup in asserts in python-novaclient
 * Update version of novaclient in the docs
-* Cleanup in test_images and image_fakes
+* Cleanup in test\_images and image\_fakes
 
 2.22.0
 ------
@@ -688,35 +890,35 @@ CHANGES
 * Enable check for E124 rule
 * Removed unused 'e' from 'try except' statements
 * allow --endpoint-type internal|admin|public
-* Fixed redeclared test_names
+* Fixed redeclared test\_names
 * Updated from global requirements
-* add pretty_tox to nova functional tests
+* add pretty\_tox to nova functional tests
 * add functional test for nova volume-attach bug
 * Revert "Overhaul bash-completion to support non-UUID based IDs"
 
 2.21.0
 ------
 
-* Change commands name from net-* to tenant-network-*
+* Change commands name from net-\* to tenant-network-\*
 * Updated from global requirements
 * Copy functional tests from tempest cli read only
 * Add all tenants search opt to del instnce by name
 * Updated from global requirements
-* Check 'auth_url' is presented while authentication
+* Check 'auth\_url' is presented while authentication
 * Wrong help for nova usage command
 * Add support for keypair-add command reading public key from stdin
-* Compare dicts for POST data in test_client_reauth
+* Compare dicts for POST data in test\_client\_reauth
 * Remove image to local block device mapping
 * Change the unsuitable item caching for completion
-* Moved set of asserts from post_servers_1234_action methods
-* Change logic in find_resource() to identify upper-case/lower-case name
-* Add first pass at post_test_hook for functional tests
-* Rename v1_1 to v2
+* Moved set of asserts from post\_servers\_1234\_action methods
+* Change logic in find\_resource() to identify upper-case/lower-case name
+* Add first pass at post\_test\_hook for functional tests
+* Rename v1\_1 to v2
 * Fix issue of quota-show and quota-defaults
 * Refer to the admin password consistently
 * Update volumes.get() docstring to correctly reflect functionality
-* First pass at tempest_lib based functional testing
-* Add OS_TEST_PATH to testr
+* First pass at tempest\_lib based functional testing
+* Add OS\_TEST\_PATH to testr
 * Move unit tests into unit test directory
 * whitelist find in testenv
 * Updated from global requirements
@@ -739,21 +941,21 @@ CHANGES
 * pass id to ServerGroupsManager in ServerGroup.delete()
 * Workflow documentation is now in infra-manual
 * Updated from global requirements
-* Remove aliases for `args` and `env` in utils
-* Use `arg` and `env` from cliutils: v1_1/shell
+* Remove aliases for \`args\` and \`env\` in utils
+* Use \`arg\` and \`env\` from cliutils: v1\_1/shell
 * Remove code related to V3
 * Enable check for E128 rule
 * Fix E128 failures in novaclient/tests
 * Fix E128 failures in novaclient/v3
-* Fix E128 failures in novaclient/v1_1/
-* Fix E128 failures in novaclient/v1_1/shell
+* Fix E128 failures in novaclient/v1\_1/
+* Fix E128 failures in novaclient/v1\_1/shell
 * Updated from global requirements
 * Curl statements to include globoff for IPv6 URLs
 * Support using the Keystone V3 API from the Nova CLI
 * Add limits to V3 and improve limits formatting in shell
 * Fix the help comment about metadata
 * Updated from global requirements
-* support OS_ENDPOINT_TYPE in nova client
+* support OS\_ENDPOINT\_TYPE in nova client
 * Updated from global requirements
 * Enable check for E129
 * Enable check for E127
@@ -763,7 +965,7 @@ CHANGES
 * Allow to start/stop multiple servers
 * Define helper to run an action on many resources
 * Add missing parameters for server rescue
-* Remove E12* from list of deliberately ignored flake8 rules
+* Remove E12\* from list of deliberately ignored flake8 rules
 * no way to delete valid/invalid security rule
 * Sync latest code
 * Port to use oslo.i18n
@@ -773,7 +975,7 @@ CHANGES
 * Updated from global requirements
 * Show 'state' and 'status' in hypervisor-list
 * return 130 for keyboard interrupt
-* Fix parameter description in create_server
+* Fix parameter description in create\_server
 * Enable check for E123
 * Enable check for E122
 * Enable check for E121
@@ -786,7 +988,7 @@ CHANGES
 * Updated from global requirements
 * Corrects typos "coearse," "proejct," and "unecrypts"
 * Add list by user to shell
-* Add retry_after only to exceptions supporting it
+* Add retry\_after only to exceptions supporting it
 
 2.19.0
 ------
@@ -799,7 +1001,7 @@ CHANGES
 * novaclient: Convert v3 boot command with v2.1 spec (security-groups)
 * delete python bytecode before every test run
 * Add support for the server group quotas
-* quota delete tenant_id parameter should be required
+* quota delete tenant\_id parameter should be required
 * Don't display duplicated security groups
 * Updated from global requirements
 * add new command get-serial-console
@@ -816,7 +1018,7 @@ CHANGES
 * Add filtering by service to hosts list command
 * Quickstart (README) doc should refer to nova
 * Updated from global requirements
-* Fix listing of flavor-list (V1_1) to display swap value
+* Fix listing of flavor-list (V1\_1) to display swap value
 * Use adapter from keystoneclient
 * Fix the return code of the command "delete"
 * Fix variable error for nova --service-type
@@ -826,7 +1028,7 @@ CHANGES
 * Fix order of arguments in assertEquals
 * Enable check for E131
 * Add support for security-group-default-rules
-* Fix rxtx_factor name for creating a flavor
+* Fix rxtx\_factor name for creating a flavor
 * Allow selecting the network for doing the ssh with
 * fix host resource repr to use 'host' attribute
 * Enable H233
@@ -842,7 +1044,7 @@ CHANGES
 * Description is mandatory parameter when creating Security Group
 * Revert "Reuse exceptions from Oslo"
 * Updated from global requirements
-* Revert "Set default http-based exception as `HttpError`"
+* Revert "Set default http-based exception as \`HttpError\`"
 
 2.18.0
 ------
@@ -853,11 +1055,11 @@ CHANGES
 * Convert security group tests to httpretty
 * Convert security group rules tests to httpretty
 * Convert Quota tests to httpretty
-* Fix the wrong dest of 'vlan' option and add new 'vlan_start' option
-* Fixing flavor access __repr__ method
+* Fix the wrong dest of 'vlan' option and add new 'vlan\_start' option
+* Fixing flavor access \_\_repr\_\_ method
 * Allow us to use keystoneclient's session
 * Fix the section name in CONTRIBUTING.rst
-* Adds clarification note for project_id vs tenant_id
+* Adds clarification note for project\_id vs tenant\_id
 * Filter endpoints by region whenever possible
 * Convert network tests to httpretty
 * Convert limit tests to httpretty
@@ -866,7 +1068,7 @@ CHANGES
 * Convert Hypervisor tests to httpretty
 * Convert hosts tests to httpretty
 * Add missing parameters for server rebuild
-* Fixes typo in error message of do_network_create
+* Fixes typo in error message of do\_network\_create
 * Mention keystoneclient.Session use in docs
 * Fix using a variable which is not defined
 * Fix booting from volume when using api v3
@@ -877,24 +1079,24 @@ CHANGES
 * Fix listing of Server in floating-ip-list
 * Sync Oslo's apiclient
 * Overhaul bash-completion to support non-UUID based IDs
-* Add some security group tests for the V1_1 API
+* Add some security group tests for the V1\_1 API
 * Updated from global requirements
-* Allow updating fixed_ips quotas in quota-class-update (v2 shell only)
+* Allow updating fixed\_ips quotas in quota-class-update (v2 shell only)
 * Look for all accessible flavors by default, not just public ones
 * Enable F841
 * Updated from global requirements
-* Remove quota-class-* commands from v3 shell
+* Remove quota-class-\* commands from v3 shell
 * Updated from global requirements
 * "nova boot" should not log an error if subsidiary commands fail
 * Bump hacking to 0.9.x series
 * Add posargs support to flake8 call
 * Fixes wrong value description for volume-detach
 * adjust to {SHA1} convention for token
-* 'policy' should be required in server_group_create
-* Adding cornercases for set_metadata
+* 'policy' should be required in server\_group\_create
+* Adding cornercases for set\_metadata
 * add tox target for python 3.4
 * mask keystone token in debug output
-* Remove _print_volume from volume-update
+* Remove \_print\_volume from volume-update
 * Add way to specify key-name from environ
 * Convert Floating IP bulk tests to httpretty
 * Convert Floating IPs DNS tests to httpretty
@@ -902,8 +1104,8 @@ CHANGES
 * Overwrite HelpFormatter constructur to extend argument column
 * Add swap measurement unit (MB) to CLI output
 * Change help message for volume-update
-* Add NOVACLIENT_BYPASS_URL env variable
-* Logical error in flavors unset_keys method
+* Add NOVACLIENT\_BYPASS\_URL env variable
+* Logical error in flavors unset\_keys method
 * Removed now unnecesary workaround for PyPy
 * Change help for --poll option in Nova commands
 * Revert "Remove quota-class subcommand"
@@ -913,7 +1115,7 @@ CHANGES
 * Convert Cloud Pipe tests to httpretty
 * In Py3 decode the output of base64.decode
 * Convert certificate tests to httpretty
-* Set default http-based exception as `HttpError`
+* Set default http-based exception as \`HttpError\`
 * Convert Availability Zone testing to httpretty
 * Convert agent testing to httpretty
 * debug level logs should not be translated
@@ -925,12 +1127,12 @@ CHANGES
 * Print message if instance is successfully deleted v3
 * Enable delete multiple server groups in one request
 * Make port-id and net-id keys mutually exclusive
-* Remove duplicate test test_boot_multiple
+* Remove duplicate test test\_boot\_multiple
 * Deprecate num-instances in favor of min/max count
 * Make help description of rescue/unrescue more useful
 * Print message if instance is successfully deleted
 * Updated from global requirements
-* Fix documentation for config_drive boot parameter
+* Fix documentation for config\_drive boot parameter
 * Synced jsonutils from oslo-incubator
 * Fix for "nova help list" command
 * Fixed a typo in a comment
@@ -940,7 +1142,7 @@ CHANGES
 * Fix wrong fake return values for Nova V3 client tests
 * Add unit test for keypair's api
 * Fix the unlimited length of console-log
-* Fix mac address and task_state in baremetal-node-list
+* Fix mac address and task\_state in baremetal-node-list
 * Updated from global requirements
 * Convert aggregates testing to use httpretty
 * Fix name arg help for volume-type-create
@@ -949,15 +1151,15 @@ CHANGES
 * Fix session handling in novaclient
 * Print adminPass when rebuilding from shell
 * Remove py3kcompat
-* Split test_rebuild() into two tests
+* Split test\_rebuild() into two tests
 * Allow admin user to get all tenant's floating IPs
 * Fix for invalid literal ValueError parsing ipv6 url(s)
-* Remove unused arguments to _boot()
+* Remove unused arguments to \_boot()
 * typo in novaclient
 * Sync with Oslo-Incubator
 * Start using oslosphinx theme for docs
 * Fix error when run with no arguments on Python 3
-* Avoid AttributeError in servers.Server.__repr__
+* Avoid AttributeError in servers.Server.\_\_repr\_\_
 * Raise exception when poll returns error state
 * Correct the help sting of volume-type-delete
 * Print a useful message for unknown server errors
@@ -965,7 +1167,7 @@ CHANGES
 * Work around pypy testing issue
 * Support IPv6 when booting instances
 * Updated from global requirements
-* Do auth_url.rstrip('/') only if auth_url is set
+* Do auth\_url.rstrip('/') only if auth\_url is set
 * Explain how to delete a metadata in aggregate-set-metadata
 * Nova CLI for server groups
 * Removes copy of output of 'nova help' from README
@@ -979,11 +1181,11 @@ CHANGES
 * Fix some spelling mistakes
 * Add classifiers for specific versions of Python
 * Remove quota-class subcommand
-* Re-add install_venv_common to openstack-common.conf
+* Re-add install\_venv\_common to openstack-common.conf
 * oslo sync apiclient and cliutils
 * Fix in in novaclient, to avoid excessive conns
 * Revert "'name' should as be optional param on aggregate-update"
-* Add service-list show `id` column
+* Add service-list show \`id\` column
 * oslo-sync of low hanging fruit
 * Updated from global requirements
 * 'name' should as be optional param on aggregate-update
@@ -996,26 +1198,26 @@ CHANGES
 * Updated from global requirements
 * Invalid client version message unclear
 * Remove None for dict.get()
-* Replace assertEqual(None, *) with assertIsNone in tests
+* Replace assertEqual(None, \*) with assertIsNone in tests
 * Fix element miss in client request body
 * Fix i18n messages in novaclient, part II
 * Update broken command line reference link
-* Fix spelling miss of password_func variable
+* Fix spelling miss of password\_func variable
 * Fix copy/paste errors in print messages
 * Remove invalid parameter of quota-update
 * Remove tox locale overrides
 * Fix python 3.3 unit test job
-* Adds support for the get_rdp_console API
+* Adds support for the get\_rdp\_console API
 * Support building wheels (PEP-427)
 * Fixed polling after boot in shell
 * Update my mailmap
 * Fix Serivce class AttributeError
-* [UT] Fixed floating_ip_pools fake return to expected one
-* [UT] Removed duplicate key from dict in fake baremetal_node
+* [UT] Fixed floating\_ip\_pools fake return to expected one
+* [UT] Removed duplicate key from dict in fake baremetal\_node
 * Fixed multi validation and wrong fail calls in unit tests
 * Fixed super constructor call for TestResponse class
 * Flavor ExtraSpecs containing '/' cannot be deleted
-* Removed undefined method in install_env.py file
+* Removed undefined method in install\_env.py file
 * Fix i18n messages in novaclient, part I
 * Adds ability to boot a server via the Nova V3 API
 * Removes unsupported volume commands from V3 API support
@@ -1023,8 +1225,8 @@ CHANGES
 * Updates nova client to use the latest oslo files
 * Using common methods from oslo cliutils
 * Add tests for boot method of v3 shell
-* Replace basestring by six.string_types
-* Removes use of timeutils.set_time_override
+* Replace basestring by six.string\_types
+* Removes use of timeutils.set\_time\_override
 * Fix logic for "nova flavor-show 0#"
 * Sync with global requirements
 * Don't call CS if a token + URL are provided
@@ -1033,7 +1235,7 @@ CHANGES
 * Fix QuotaClassSet and their tests
 * assertTrue(isinstance) replace by assertIsInstance
 * Remove the coverage extension code
-* shell: refactor boot to use _print_server
+* shell: refactor boot to use \_print\_server
 * Don't slugify() None names
 * Adds volume support for the V3 API
 * Fixes ambiguous cli output between "None" and NoneType
@@ -1042,14 +1244,14 @@ CHANGES
 * Removes vim configuration headers
 * Adds quota usage support for the V3 API
 * Fix tab-completion of --flags under OS X
-* Remove class_name parameter from quota_class
+* Remove class\_name parameter from quota\_class
 * Ensure that the diagnostics are user friendly
-* Code cleanup: use oslo's to_slug() instead of slugify()
+* Code cleanup: use oslo's to\_slug() instead of slugify()
 * Added v3 interfaces in reference doc
 * Enable pep8 check for config.py in doc
 * Generate interfaces reference doc
 * Ensure that nova client prints dictionaries and arrays correctly
-* Replace some utils.bool_from_str with strutils
+* Replace some utils.bool\_from\_str with strutils
 * Allow empty response in service-list
 * Nova aggregate-details should be more human friendly
 * Removed duplicated import
@@ -1085,7 +1287,7 @@ CHANGES
 * Remove the release.rst file
 * Fix docstring on novaclient
 * add support for server set metadata item
-* Fix incorrect help message on flavor_access action
+* Fix incorrect help message on flavor\_access action
 * Fix inappropriate comment for delete FloatingIP
 * Enable hacking check for Apache 2.0 license
 * Sets default service type for Nova V3 API
@@ -1098,8 +1300,8 @@ CHANGES
 * Removes unnecessary pass
 * Updated from global requirements
 * Discrepancy between README.rst and nova help
-* nova security-group-* should support uuid as input
-* Change "project" to "project_id" in cloudpipe-create
+* nova security-group-\* should support uuid as input
+* Change "project" to "project\_id" in cloudpipe-create
 * Fix single H234 Bug to make Hacking 0.8 pass
 * Flatten hypervisor-show dictionary for printing
 * Revert "Nova aggregate-details should be more human friendly"
@@ -1112,36 +1314,36 @@ CHANGES
 * Add --insecure to curl output if required
 * Apply six for metaclass
 * Updated from global requirements
-* Remove deprecated NOVA_RAX_AUTH
+* Remove deprecated NOVA\_RAX\_AUTH
 * Print dicts in alphabetical order
 * Make os-cache retry on an invalid token
-* Document and make OS_CACHE work
-* Revert "Add-in some re-auth logic when using os_cache"
+* Document and make OS\_CACHE work
+* Revert "Add-in some re-auth logic when using os\_cache"
 * Align mocking pattern for test case
 * py33: use six.StringIO() to mock stdout/stderr
 * py33: sort the files parameters of "--files"
 * py33: sort hosts while treeize AvailabilityZone
 * py33: unify the input of request to json format
 * py33: align the order of parameters for urlencode()
-* py33: sort dict for test_add_floating_ip_to_fixed
+* py33: sort dict for test\_add\_floating\_ip\_to\_fixed
 * py33: iteration order of dict is unpredictable
 * Updated from global requirements
 * py33: 'str' does not support the buffer interface
 * assertEquals is deprecated, use assertEqual
 * py33: align the order of parameters for urlencode()
 * Add shelve/unshelve/shelve-offload command
-* py33: uuid verification in find_resource()
-* py33: don't encode security_group
-* Add-in some re-auth logic when using os_cache
+* py33: uuid verification in find\_resource()
+* py33: don't encode security\_group
+* Add-in some re-auth logic when using os\_cache
 * if we have a valid auth token, use it instead of generating a new one
-* py33: safe_encode() returns bytes in Python 3
+* py33: safe\_encode() returns bytes in Python 3
 * py33: unknown encoding: base64 Edit
-* Fix AttributeError in Keypair._add_details()
+* Fix AttributeError in Keypair.\_add\_details()
 * Fixed several test failures on Python3
 * Make nova CLI use term "server" where possible
 * py33: dict.keys() is not a list in python3
 * Corrected several usage of keys() for Python 3
-* py33: 'dict_keys' object does not support indexing
+* py33: 'dict\_keys' object does not support indexing
 * Corrected usage of len(filter(...))
 * Update pbr usage
 * Clean up a little cruft
@@ -1160,7 +1362,7 @@ CHANGES
 * python3: Compatibility for iteritems differences
 * python3: Fix traceback while running unit tests
 * python3: Fix Traceback while running unit tests
-* Unittests added for client v1_1
+* Unittests added for client v1\_1
 * Python3: Fix traceback while running unit tests
 * Python3: Use six.StringIO for io.Bytes()
 * Update oslo from oslo-incubator
@@ -1186,7 +1388,7 @@ CHANGES
 * Remove old references
 * Enable v3 api code
 * Begin adding v3 api support
-* change 'Host' object's 'host' attribute to 'host_name'
+* change 'Host' object's 'host' attribute to 'host\_name'
 * Updated from global requirements
 * Do not restrict flavor to only ID and integers
 * Fix typo and grammar in docstring only
@@ -1200,7 +1402,7 @@ CHANGES
 ------
 
 * Sync with global requirements
-* Add support for swap_volume
+* Add support for swap\_volume
 * FakeClient: fix the arguments of a string format
 * Support programmatic use of disk config extension
 * Check whether the security group id is integer
@@ -1210,18 +1412,18 @@ CHANGES
 * make findall in novaclient/base.py more efficient
 * Fix the help text process and the generated wrong help
 * Remove python 2.4 and python 2.5 support
-* Enable force_delete and restore instance via novaclient
+* Enable force\_delete and restore instance via novaclient
 * Add name argument to aggregate commands
 * Add name argument to hypervisor commands
 * recognize 429 as an rate limiting status
 * Fix backwards-incompatible API change (method signature)
 * Fix and enable gating on H402
 * Add AgregatesManager.get()
-* Skip setting volume_size if not given
+* Skip setting volume\_size if not given
 * Fix interface-list got none mac address
 * Remove uncessary code related to nova start/stop
-* make v2_auth and plugin_auth explictly return their results
-* Sync install_venv_common from oslo
+* make v2\_auth and plugin\_auth explictly return their results
+* Sync install\_venv\_common from oslo
 * Clean up and make HACKING.rst point to openstack-dev/hacking
 * CLI for disable service reason
 * Allow tenant ID for authentication
@@ -1242,7 +1444,7 @@ CHANGES
 * Set default value of flavorid to "auto"
 * Migrate each instances of a host to another
 * Set/Delete metadata on all instances of a host
-* The 'nova keypair-show key_name' command added
+* The 'nova keypair-show key\_name' command added
 * Use Python 3.x compatible except: construct
 * Delete a quota through admin api
 * Exit w/ valid code when no servers are deleted
@@ -1264,18 +1466,18 @@ CHANGES
 * Only add logging handlers if there currently aren't any
 * Convert to more modern openstack-common.conf format
 * Cleanup unused local variables
-* Reuse oslo for is_uuid_like() implementation
+* Reuse oslo for is\_uuid\_like() implementation
 * Synchronize code from oslo
 * Migrate to pbr
 * Cleanup nova subcommands for security groups and rules
 * Make ManagerWithFind abstract and fix its descendants
 * Cleanup some flavor commands
-* Fix the default parameter in print_list
+* Fix the default parameter in print\_list
 * Fix for --bridge-interface being ignore by nova network-create
-* Add setuptools_git-*.egg to .gitignore
-* Expose retry_after attribute of OverLimit exception
+* Add setuptools\_git-\*.egg to .gitignore
+* Expose retry\_after attribute of OverLimit exception
 * Adds extended status fields to nova list
-* Clean up exceptions.from_response
+* Clean up exceptions.from\_response
 * Allow deleting multiple images from shell
 * Synchronize code from oslo
 * Add 'flavor-list --all' admin switch
@@ -1285,14 +1487,14 @@ CHANGES
 * Cleanup unused import
 * Make --vlan option work in network-create in VLAN mode
 * Support force update quota
-* make sure .get() also updates _info
+* make sure .get() also updates \_info
 * Add coverage-reset command to reset Nova coverage data
 * Fixing shell command 'service-disable' description
 * Correct a unit test failure that crept into trunk
 * Fix problem with nova --version
-* Make "multi_host" True when it is set to 'T' in network_create
+* Make "multi\_host" True when it is set to 'T' in network\_create
 * Fix IBM copyright strings
-* Allow for bypass_url when using proxy_token
+* Allow for bypass\_url when using proxy\_token
 
 2.13.0
 ------
@@ -1305,7 +1507,7 @@ CHANGES
 * catch NoKeyringDaemonError from gnomekeyring
 * Ensure shell tests use isolated env variables set
 * Update to latest openstack.common.setup
-* setuptools: remove data_files section
+* setuptools: remove data\_files section
 * Use correct filter name for listing of instances
 
 2.12.0
@@ -1318,24 +1520,24 @@ CHANGES
 * Use setuptools-git to include files from the repo
 * Update tools/pip-requires for prettytable
 * Fix keypair-delete help documents
-* Add support for the new fixed_ip quota
+* Add support for the new fixed\_ip quota
 * Set up debug level on root logger
 * Remove unused import
 * Fix Copyright Headers from LLC to Foundation
 * Removes tenant IDs checking for nova quota operations
 * Make os-services API extensions consistent with Nova
-* Revert API changes in "Unify Manager._update behaviour"
+* Revert API changes in "Unify Manager.\_update behaviour"
 * Use keyring for testing
-* Show Tenant_ID for secgroup-list with all-tenant
-* Additional "Unify Manager._update behaviour" cleanup
+* Show Tenant\_ID for secgroup-list with all-tenant
+* Additional "Unify Manager.\_update behaviour" cleanup
 * Add wrap option to nova credentials for humans
-* Check if tenant flag is uuid_like for all quota operations
+* Check if tenant flag is uuid\_like for all quota operations
 * Fix nova boot --num-instances option checking
 * Fix typo in error message
-* Extend test coverage for v1_1/shell.py
+* Extend test coverage for v1\_1/shell.py
 * Decodes input and encodes output
 * Fixed bug with password prompt, added tests
-* Make ip_protocol parameter in security groups rules case insensitive
+* Make ip\_protocol parameter in security groups rules case insensitive
 * Fixes the output of 'os-evacuate' command
 * Update the docstring of cloudpipe-configure command
 * Accept 201 status code on POST
@@ -1343,7 +1545,7 @@ CHANGES
 * Missing import for gnomekeyring
 * A minimum of Python3 fixes so that installation works without errors/warnings
 * Allows admins to reset-network of an instance
-* Remove prov_vlan_id from baremetal
+* Remove prov\_vlan\_id from baremetal
 * Add support for os-attach-interfaces
 * Added limit to image-list in a preparatory step toward addressing bug 1001345
 * Extend test coverage (shell, fping)
@@ -1354,10 +1556,10 @@ CHANGES
 * Issue when gnomekeyring is present but not the current backend
 * Avoid doing a deep copy on the availability zone manager
 * Allow extensions to provide a name when discovered on the python path
-* Fix IOError with gnomekeyring.find_network_password_sync
+* Fix IOError with gnomekeyring.find\_network\_password\_sync
 * Expand and improve baremetal API
 * Fix nova availability-zone-list for admin users
-* Make availability_zone in aggregate_create optional
+* Make availability\_zone in aggregate\_create optional
 * Corrects 2nd argument type for logging
 
 2.11.0
@@ -1366,9 +1568,9 @@ CHANGES
 * Add format options to 'nova coverage-report'
 * Update to requests >= 0.8
 * Mask permissions on private key files
-* Fix run_tests.sh --coverage
+* Fix run\_tests.sh --coverage
 * Support showing extra fields in server list
-* management_url not set by authenticate method
+* management\_url not set by authenticate method
 * Update .coveragerc
 * Show the summary or details of all availability zones of a region
 * Upgrade to pep8 1.3.3
@@ -1377,20 +1579,20 @@ CHANGES
 * Add help about the id 'auto' for flavor-create
 * Fix default format of 'nova coverage-report'
 * Add usage command to show usage for single tenant
-* Store tenant_id from keystone and use for quotas
+* Store tenant\_id from keystone and use for quotas
 * Show the details of the added bare-metal resource
 * Fix the usage of password, keyrings, and tokens
 * Added homedir path expansion for keypair-add
 * Migrate from nose to testr
-* _get_secgroup returns first group even if multiple groups match
+* \_get\_secgroup returns first group even if multiple groups match
 * Fix bash completion on osx
-* Check tenant_id's format in "nova quota-update"
+* Check tenant\_id's format in "nova quota-update"
 * ClientExceptions should include url and method
 * Adds baremetal nova API support
 * RateLimit does not have method attribute
-* make print_dict split strings with newlines into multiple rows
+* make print\_dict split strings with newlines into multiple rows
 * Allow for image selection using the metadata properties
-* Add support for get_spice_console RPC API
+* Add support for get\_spice\_console RPC API
 * Ensure list output function can support non-sorting printing
 * Allow request timeout to be specified
 * Implement get password for novaclient
@@ -1403,15 +1605,15 @@ CHANGES
 * Fix the help text of add-fixed-ip
 * Move from untitest2 to testtools
 * Update README.rst
-* Unify Manager._update behaviour
-* Fix some usage messages of 'nova volume-*'
-* add num_instances option for nova boot
+* Unify Manager.\_update behaviour
+* Fix some usage messages of 'nova volume-\*'
+* add num\_instances option for nova boot
 * Use requests module for HTTP/HTTPS
 * Fix find for alphanumeic flavor id/name
 * Make --tenant a required arg for quota-show
 * Add support for the coverage extension
 * Specify some arguments by name
-* Makes the OS_NO_CACHE env variable work again
+* Makes the OS\_NO\_CACHE env variable work again
 * Add optional argument to include reservations in os-used-limits
 * Add nova client support for nova-manage agent command
 * Adds --os-cache to replace old --no-cache
@@ -1421,15 +1623,15 @@ CHANGES
 * Fix argument checking method for 'nova list --flavor' command
 * Fix a wrong substition for '-h' in bash completion
 * Fixed nics param ignored when bdm is specified
-* Adds support for key_pairs quota
-* Adds support for injected_file_path_bytes quota
+* Adds support for key\_pairs quota
+* Adds support for injected\_file\_path\_bytes quota
 * Adds nova client support for nova-manage floating command
 
 2.10.0
 ------
 
 * Remove unnecessary casts in flavor create
-* Validate that rxtx_factor is a float
+* Validate that rxtx\_factor is a float
 * Adds nova client support for nova-manage vpn command
 * Fix aggregate command help messages
 * Add nova client support for nova-manage account scrub command
@@ -1441,7 +1643,7 @@ CHANGES
 * Added --extra-opts to the nova ssh command
 * Cleans up the flavor creation code. Fixes bug 1080891
 * Adding support to filter instances by tenant from the admin api
-* Make sure create_image returns result
+* Make sure create\_image returns result
 * make tenant id optional for quota-defaults and quota-show
 * fix hypervisor-servers for hypervisors without servers
 * discover extensions via entry points
@@ -1461,7 +1663,7 @@ CHANGES
 * Add support for backup instance
 * Add simple os-api extension cli extension
 * Raises Exception on improper Auth Configuration
-* Do not prefer ALL_TENANTS environment variable to command line arguments
+* Do not prefer ALL\_TENANTS environment variable to command line arguments
 * Encode user data to utf-8 when creating a server
 * Add --all-tenants option to volume-list
 
@@ -1487,19 +1689,19 @@ CHANGES
 * Fix usage-list date range to use UTC time
 * Show POST in debug with curl
 * Fixes doc string and string formatting
-*     Add the image_id arg to volume create
+*     Add the image\_id arg to volume create
 * Make region case insensitive
 * Fix PEP8 issues
 * Add -X to DELETE and PUT in debug mode
 * Implement project specific flavors API, client bindings
 * Add missing port-id usage info
-* Change '_' to '-' in options
+* Change '\_' to '-' in options
 * Adding --version option
-* Added -nic port-id=<port_uuid_in_qunatum> support
+* Added -nic port-id=<port\_uuid\_in\_qunatum> support
 * Implement network calls in nova client
 * Add nosehtmloutput as a test dependency
 * split req and response logging this allows capture of timestamps prior to and after request for timing also did some pep8 1.3 cleanup while I was in there
-* Add availability_zone support for volume creation
+* Add availability\_zone support for volume creation
 * Adds support for autogenerated device on attach
 * Allow resources to use any field as 'name'
 * gitignore ChangeLog and add to MANIFEST.in
@@ -1522,7 +1724,7 @@ CHANGES
 * 'endpoints' and 'credentials' work with token caching
 * This should fix a problem with overly aggressive token caching
 * Flavor-list sort by ID numerically
-* Bring back the output from client.http_log()
+* Bring back the output from client.http\_log()
 
 2.6.10
 ------
@@ -1530,11 +1732,11 @@ CHANGES
 * Add hypervisor information extension
 * More friendly keyring support when token caching is off
 * Whoops, the last changes to keyring introduced some problems with v1.1 auth tests
-* Auth token caching on by default. --no_cache to disable. Better bypass support too
+* Auth token caching on by default. --no\_cache to disable. Better bypass support too
 * Add host-list command
 * Indicate unused variables and other misc. house cleaning
 * don't bash-complete the '-h' option
-* Add read_versioninfo method
+* Add read\_versioninfo method
 * Turn multiple hints with the same key into a list
 * Cleanup of setup.py usage of openstack-common
 * Implement post-tag versioning numbering
@@ -1548,11 +1750,11 @@ CHANGES
 * Admin action to reset states
 * Filter out v1.0 endpoints
 * option to bypass managment endpoint and timings support
-* Removes NOVACLIENT_DEBUG from client code
+* Removes NOVACLIENT\_DEBUG from client code
 * Fix spelling errors in aggregates section
 * Move docs to doc
 * Lock prettytable dep at v0.6
-* Removed generate_authors.sh since it's no longer used
+* Removed generate\_authors.sh since it's no longer used
 * nova show cmd displays unique flavor and image id
 * Use openstack-common for AUTHORS generation
 * Add .tox to .gitignore
@@ -1563,16 +1765,16 @@ CHANGES
 * Turn on verbose test output
 * Align tox.ini with standards
 * make nova bash-complete faster and more accurate
-* refactored --service_name to only work with compute calls and added --volume_service_name for volume calls
-* removed int requirement for volume_id on snaps
+* refactored --service\_name to only work with compute calls and added --volume\_service\_name for volume calls
+* removed int requirement for volume\_id on snaps
 * Updated to new prettytable api. Fixes bug 995818
 * Allow server name to be specified for actions and diagnostics
 * Don't force volume id to int and allow search by name
-* Fix LP #990667 - Keypair __repr__ referencesuuid
+* Fix LP #990667 - Keypair \_\_repr\_\_ referencesuuid
 * really output the description of an exception
 * Limit hint/nic parsing to one split on '='
-* update README.rst,add args "service_type" when getting endpoints
-* Rename NOVA_VERSION to OS_COMPUTE_API_VERSION
+* update README.rst,add args "service\_type" when getting endpoints
+* Rename NOVA\_VERSION to OS\_COMPUTE\_API\_VERSION
 * Raise exception on all 4xx and 5xx responses
 * Update unittests to be Python 2.6 compatible
 * Display the request id on error response
@@ -1581,20 +1783,20 @@ CHANGES
 * Request ID when name is ambiguous
 * Set resources as loaded on get
 * Miscellaneous code cleanup
-* add packages using find_packages()
+* add packages using find\_packages()
 * set 'compute' as default endpoint bug fix for #970808
 * Add -i/--identity option to 'nova ssh'
 * Improve 'nova ssh' error message
 * Fix spelling of curent in list sec groups
 * Set up the log handler only once
 * Remove serverId lookup in volume attachments
-* Handle server_id and serverId in volume list
+* Handle server\_id and serverId in volume list
 * Added cloudpipe support. Fixes bug 962286
 * Proposed HACKING guidelines for string encoding
 * Add missing tools and tox.ini to tarball
 * Fixes bug #959262 - Prevent a failure to create the cache directory from causing an exception
 * Improve the error message from the nova shell
-* Adds NOVACLIENT_INSECURE option
+* Adds NOVACLIENT\_INSECURE option
 * Implement quota classes
 * Open Folsom
 * Adding Console Log to CLI
@@ -1602,7 +1804,7 @@ CHANGES
 * Add suport for instance locking/unlocking
 * Add --poll for instance snapshots
 * Add human-friendly ID support
-* Fixes lp#948685 proxy_token and proxy_tenant_id behavior
+* Fixes lp#948685 proxy\_token and proxy\_tenant\_id behavior
 * Separate UUID caches for different endpoints
 * Remove trailing whitespaces in regular file
 * Adds --ipv6 and --port to ssh convience command
@@ -1610,11 +1812,11 @@ CHANGES
 * Add support for volume types
 * Makes novaclient use the volumes endpoint
 * Fix for backward compatibility with stable/diablo flavors
-* Add support for ephemeral_gb to novaclient
+* Add support for ephemeral\_gb to novaclient
 * allow '=' inside value of --meta=key=value
 * bug 932408: python-novaclient miss OSAPI host operations
 * Add ssh convenience command
-* Allow UUID_CACHE_DIR overriding via env variable
+* Allow UUID\_CACHE\_DIR overriding via env variable
 * Removes zones
 * Fixes bug 925644: move dotfiles into dir
 * add support for --config-drive 'boot' command
@@ -1626,12 +1828,12 @@ CHANGES
 * Adding describe-resource subcommand
 * Add Accept: applicaton/json header to all service requests.  Fixes bug 904436
 * Blueprint cli-auth: common cli args
-* Add --all_tenants option to 'nova list'
+* Add --all\_tenants option to 'nova list'
 * Adding live migration subcommand
 * Handle Ambiguous Endpoints Correctly
 * Implementing Scheduling Hints
-* Remove non-working --key_path argument on boot
-* Fix datetime issue with usage_data
+* Remove non-working --key\_path argument on boot
+* Fix datetime issue with usage\_data
 * blueprint host-aggregates: client bindings
 * moves the "help" in the usage information of a wrong command to the correct position
 * Implementing client for new x509 support in nova
@@ -1639,10 +1841,10 @@ CHANGES
 * Add a 'usage' module and 'usage-list' cli command
 * Implement virtual interfaces servers api
 * Print adminPass when rescuing an instance
-* do not require NOVA_VERSION in env, default to 1.1
-* Match create_image on server object and manager
+* do not require NOVA\_VERSION in env, default to 1.1
+* Match create\_image on server object and manager
 * Catch novaclient up with renaming and other nova changes
-* Add server.get_vnc_console functionality to python-novaclient
+* Add server.get\_vnc\_console functionality to python-novaclient
 * Fix bad api call, 'migrate' is an action
 * Adding rebuild/resize hooks
 * Implementing Floating Ip Pools
@@ -1656,20 +1858,20 @@ CHANGES
 * Install a good version of pip in the venv
 * Add tox.ini file
 * Add missing returns and remove superfluous ones
-* Fix typo in endpoint_name help string
+* Fix typo in endpoint\_name help string
 * Add the python api for floating IP DNS
 * Abstract Client building into novaclient.client
 * Remove unused imports and fix NameError on exc
 * Improve the test framework to handle urls with args
-* Simplifying get_console_output client interface
+* Simplifying get\_console\_output client interface
 * Removing cache-busting query param (fresh)
-* Adding return statement to get_console_output
+* Adding return statement to get\_console\_output
 * python-novaclient missing pep8 in pip-requires
-* utils.find_resource fixes + fix for volumes
+* utils.find\_resource fixes + fix for volumes
 * Add list() method to ManagerWithFind
 * Extensions can now modify resources
 * more work towards standardize config
-* Allow to not specify image if block_device_mapping is set
+* Allow to not specify image if block\_device\_mapping is set
 * Adding support for the os-getConsoleOutput server action
 * Add 'discover' command for Keystone discovery and version listing
 * User friendly help message
@@ -1681,7 +1883,7 @@ CHANGES
 * Fix typo in README
 * Accept 1 and 2 as version choices
 * Add support for RAX authentication
-* Align run_tests.sh with nova
+* Align run\_tests.sh with nova
 * Switch versioning to common Nova versioning
 * Fix PEP8 error
 * Add MANIFEST.in and setup.cfg back
@@ -1690,12 +1892,12 @@ CHANGES
 * Clean up image-list cli command
 * Clean up image-show
 * Updated README.rst
-* Converting rxtx_cap and rxtx_quota to rxtx_factor
+* Converting rxtx\_cap and rxtx\_quota to rxtx\_factor
 * Gracefully handle failure to cache UUID's. Bug #897885
-* Change 'zone_blob' key to 'blob' in create server. bug 893183
+* Change 'zone\_blob' key to 'blob' in create server. bug 893183
 * Fix spacing errors in authentication exceptions
 * Adding UUID cache for bash autocompletion
-* Revert api_key change in novaclient Client argument
+* Revert api\_key change in novaclient Client argument
 * Adds bash completion support and cleans up setup.py
 * Rewriting admin-only calls as server actions
 * Add rfc.sh
@@ -1707,28 +1909,28 @@ CHANGES
 * Use a try/finally to ensure state restoration
 * Follow redirects when calling out to Keystone
 * Modified as per code-review comments:     - Renaned snapshot to volume-snapshot     - Created a new file for volume snapshots
-* few missing references to api_key
+* few missing references to api\_key
 * tests working
 * started
-* added --endpoint_name support
+* added --endpoint\_name support
 * Add back display of adminPass to boot
 * Boot now works with limited info returned from server
 * fixed missing line continuation characters in shell.py
-* PEP8 cleanups of utils, and the v1_?/shell.py files
+* PEP8 cleanups of utils, and the v1\_?/shell.py files
 * minor pep8 tweaks
 * corrected argument order and replaced tabs with spaces
 * resolved merge conflict
 * added a space after url
 * Added the option --insecure.   This disables SSL certificate validation
 * Updated the novaclient shell to display the parent server id that the image came from
-* Fixed description for block_device_mapping parameter
+* Fixed description for block\_device\_mapping parameter
 * minor fixes
 * Added support for boot from volume (or snapshot)
 * version update
 * minor tweaks and long overdue pep8
 * new service catalog semantics
 * Added support for listing/creating/deleting snapshots of nova volumes. Also implemented the supporting CLI commands.     Requires the OS API extension, 'os-snapshots'
-* Updated volume-create command to accept an optional attribute, snapshot_id. This enables the user to create a volume from a snapshot
+* Updated volume-create command to accept an optional attribute, snapshot\_id. This enables the user to create a volume from a snapshot
 * Fixes #133 -- Keystone Client fetches correct service type and endpoint
 * fix tests
 * typo
@@ -1745,10 +1947,10 @@ CHANGES
 * work on formatting for secgroup rules
 * display floating ip on create
 * Add CLI for security groups and rules
-* raise exception if floating_ip is not found in floating-ip-delete
+* raise exception if floating\_ip is not found in floating-ip-delete
 * Add cli for floating ips
 * Added support to specify more boot options
-* Don't filter endpoints when filter_value is non-truthy
+* Don't filter endpoints when filter\_value is non-truthy
 * Added the following CLI commands to access nova volumes:     volume-attach       Attach a volume to a server.     volume-create       Add a new volume.     volume-delete       Remove a volume.     volume-detach       Detach a volume from a server.     volume-list         List all the volumes.     volume-show         Show details about a volume
 * now uses tenantName vs. tenantId to auth
 * version bump
@@ -1760,7 +1962,7 @@ CHANGES
 * Added support to access nova-volume api (v1.1 extension)     - Only the basic functionality (create, delete, list) is implemented
 * add todo to update doc strings so that they reflect extension/optional-ness
 * update doc strings
-* add key_name to servers.create
+* add key\_name to servers.create
 * Make sure flavor is a type of int
 * removed debugging
 * token support
@@ -1776,14 +1978,14 @@ CHANGES
 * service catalog as auth parameter
 * service name support
 * Extend lazy loading support to Weighting
-* Fix unittests breakage in test_shell
+* Fix unittests breakage in test\_shell
 * Fix #109 (nova show name not working)
 * Add userdata support
-* Remove extra NOVA_PROJECT_ID
+* Remove extra NOVA\_PROJECT\_ID
 * Fix unittests breakage from merge 3507905
-* Add 'meta' command to allow set/delete of metadata items on servers. Added ability to run multiple assert_called tests from one test function
+* Add 'meta' command to allow set/delete of metadata items on servers. Added ability to run multiple assert\_called tests from one test function
 * add build, dist, python-novaclient.egg-info to .gitignore
-* fixes odd __get_attr__ behavior in 2.6.5
+* fixes odd \_\_get\_attr\_\_ behavior in 2.6.5
 * conflict fixed
 * catch misssing id
 * Add body in debugging
@@ -1791,31 +1993,31 @@ CHANGES
 * Add support for image metadata to be viewed, added, updated, and deleted
 * Bump the release version
 * fixed up zone-add
-* Reducing v1_1.base to just booting manager
+* Reducing v1\_1.base to just booting manager
 * tests working
 * in progress - adding zone name
-* ensure we have auth_url and project_id for !1.0
+* ensure we have auth\_url and project\_id for !1.0
 * Updated error message as suggested by bcwaldon
 * take auth token param
 * Do not assume default for image and flavor
 * expanding on concept of 'loaded'
 * limiting resource lazyloading to a single query
 * Fix extra # char as noticed by jk0
-* Add piston service_catalog
+* Add piston service\_catalog
 * Add anotherjesse keystone here
 * Fix loop properly
 * Make sure we can do a get on the base class
 * Client changes for username and password in zone add
 * fix for chmouel's comment, and tweaks to tests
-* support for floating_ips + D4
-* make __repr__ more useful with default behavior, rather than juse displaying id
+* support for floating\_ips + D4
+* make \_\_repr\_\_ more useful with default behavior, rather than juse displaying id
 * a few tweaks to get the client talking to nova
 * more cleanup
 * progress on security groups
 * updating version
 * updating for new rebuild format
 * adding tests
-* cleaning up find_resource method to support str/int ids, uuids, and integer-like names
+* cleaning up find\_resource method to support str/int ids, uuids, and integer-like names
 * Fix #85
 * fixing the shell tests
 * Fixed 1.0 and unit tests
@@ -1824,7 +2026,7 @@ CHANGES
 * removing extra space
 * updating quotas and tests with the format which recently landed in nova
 * fixing up a few pep8 issues, and pointing client to the new endpoint
-* Properly make image_id a requirement to be int
+* Properly make image\_id a requirement to be int
 * Make sure the image id is an integer
 * really fixed
 * accidentally deleted a comment when fixing conflict
@@ -1832,12 +2034,12 @@ CHANGES
 * update readme to talk about keystone with CLI and use 1.1 api
 * Switch API path to match http://bazaar.launchpad.net/~tpatil/nova/os-security-groups/revision/1369
 * Fix API path
-* fix display_name references that should have been instance_name
-* removed fixed_ip from v1.1 shell.  Use --ip instead.  Fixed up rest of other search options from last commit
-* start add of --image, --flavor, --status, and --host options to 'list' command.  also fix up differences with --name and --display_name compared to how nova implementation turned out
+* fix display\_name references that should have been instance\_name
+* removed fixed\_ip from v1.1 shell.  Use --ip instead.  Fixed up rest of other search options from last commit
+* start add of --image, --flavor, --status, and --host options to 'list' command.  also fix up differences with --name and --display\_name compared to how nova implementation turned out
 * Security groups cleanups
-* Added redirect tests, changed wrong status in test_authenticate_success
-* Added self.auth_url updating, WrongResponse exception
+* Added redirect tests, changed wrong status in test\_authenticate\_success
+* Added self.auth\_url updating, WrongResponse exception
 * add note about keystone / auth 2.0
 * Clean up id handling and pass basic tests
 * Add security group rules
@@ -1856,21 +2058,21 @@ CHANGES
 * pep8, again
 * Recursion handling
 * Added .mailmap file for AUTHORS
-* Updated authors and fixed tools/generate_authors.sh
+* Updated authors and fixed tools/generate\_authors.sh
 * Fixes copyright notice and adds script to gen AUTHORS
 * keypair api
 * pep8
 * Status code 305 fix, ClientExceptions if we can not handle response
 * whitespace cleanups
 * pep8 cleanups after the rebase
-* Adds run_tests.sh and virtualenv support
+* Adds run\_tests.sh and virtualenv support
 * pep8 in tests
 * pep8 in novaclient
 * Add Hacking and Authors to bring this into accordance with OpenStack coding standards
 * redirect
 * Redirection handling
 * cleaning up boot output; upping version
-* Added documentation for NOVA_VERSION
+* Added documentation for NOVA\_VERSION
 * Make it possible to authenticate against keystone
 * Removed the bodies again
 * Corrected docs
@@ -1888,8 +2090,8 @@ CHANGES
 * novaclient -> nova in some documentation as per feedback
 * Removed unneeded print
 * Change create-image back to image-create, and increased version to 2.6.0
-* Updated --version to default to NOVA_VERSION, quick fix
-* Updated --version to default to NOVA_VERSION
+* Updated --version to default to NOVA\_VERSION, quick fix
+* Updated --version to default to NOVA\_VERSION
 * osc -> novaclient
 * Cleaned up v1.0 and v1.1 test setup to remove globals and encapsulate custom asserts. Still duplicate code, but closer to being able to remove. Now tests set up OpenStackClient much closer to how users will do it, minus the stubbing of the client
 * Wrong client was getting loaded
@@ -1897,7 +2099,7 @@ CHANGES
 * Tests now run correctly for v1.1 and v1.0
 * Updated the default version back to 1.0, as there are some quirks with 1.1
 * Tests working again...merged in some work we did earlier
-* Split everything down the middle into v1_0 and v1_1, including tests
+* Split everything down the middle into v1\_0 and v1\_1, including tests
 * bumping version and updating README
 * updating server backup action; pep8 fixes
 * removed server dump after add/remove fixed-ip
@@ -1905,7 +2107,7 @@ CHANGES
 * fixed public private ip list
 * added various search options to list command.  will need a version bump as i changed the 'list' api that nova uses.  after version bump, my search nova branch will need pip-requires updated to match
 * docs
-* added add/remove fixed_ip actions to servers
+* added add/remove fixed\_ip actions to servers
 * Clarify description so usage doesn't imply name is the only valid value
 * Added support for request timeouts
 * Added migration functionality
@@ -1913,33 +2115,33 @@ CHANGES
 * Review feedback
 * Fixed unit tests
 * Implemented backup with rotation
-* for creating 'x' instances, min_count > max_count check was reversed make max/min_instances a little more sane by making them 'int' types fix issue where only specifying --min_instances didn't work
+* for creating 'x' instances, min\_count > max\_count check was reversed make max/min\_instances a little more sane by making them 'int' types fix issue where only specifying --min\_instances didn't work
 * Due to how novaclient works, it tends to do a 'get' first on whatever ID you pass on command line.  Then it does the real command, re-using the ID found in the 'get' call, instead of the initial ID that you specified (which may have been a UUID)
-* Cleaned up the query_string generation for 'nova list' Made --recurse_zones not need an '=argument'
-* Added --recurse_zones option to 'list' Added --fixed_ip option to 'list' to find a particular instance by IP Fixed issue with 'show' when --recurse_zones=1 and specifying UUID
+* Cleaned up the query\_string generation for 'nova list' Made --recurse\_zones not need an '=argument'
+* Added --recurse\_zones option to 'list' Added --fixed\_ip option to 'list' to find a particular instance by IP Fixed issue with 'show' when --recurse\_zones=1 and specifying UUID
 * fixup
 * release note update
-* tests working again for weight_scale/weight_offset
+* tests working again for weight\_scale/weight\_offset
 * fixed up tests after trunk merge and bumped version
 * version bump
-* fixed project_id tests
-* Merged my 'create-num-instances' branch which adds support for --min_instances and --max_instances to zone-boot
+* fixed project\_id tests
+* Merged my 'create-num-instances' branch which adds support for --min\_instances and --max\_instances to zone-boot
 * version bumped
 * trunk merge
 * Typo fix
 * Added the missing files
 * Added a method to create instances on behalf of an account via the admin API methods for openstack
 * changed docs about using project id
-* bumped version # after project_id update
+* bumped version # after project\_id update
 * Don't restrict ids to int
 * fix errors
 * support for project id header
-* Now that I understand how to build extensions, I understand how this extension will be built, and can fully implement add_fixed_ip() and remove_fixed_ip()
-* Add the basic calls for add_fixed_ip/remove_fixed_ip
+* Now that I understand how to build extensions, I understand how this extension will be built, and can fully implement add\_fixed\_ip() and remove\_fixed\_ip()
+* Add the basic calls for add\_fixed\_ip/remove\_fixed\_ip
 * defaults back to no detail
 * tweaks
 * griddynamics better logging
-* reservation_id optional parameter added to GET /servers (aka 'list')
+* reservation\_id optional parameter added to GET /servers (aka 'list')
 * works properly with zone-boot
 * Improving tests
 * Added parameter detailed to list
@@ -1949,7 +2151,7 @@ CHANGES
 * add logging for http request-response
 * zone select
 * add undetailed flavor list
-* zone_blob support added to server.create
+* zone\_blob support added to server.create
 * fixed flavor-list columns
 * added support for missing flavors/images
 * up'ed version to suit pypi distribution update
@@ -1967,8 +2169,8 @@ CHANGES
 * zone info works
 * get this zone status
 * removed Username from zone info
-* NOVA_TOOLS_* -> NOVA_*, --debug
-* removed zone name, renamed auth_url to api_url, added username/password
+* NOVA\_TOOLS\_\* -> NOVA\_\*, --debug
+* removed zone name, renamed auth\_url to api\_url, added username/password
 * zone shell cmds & tests added
 * zone tests pass
 * zone tests pass
