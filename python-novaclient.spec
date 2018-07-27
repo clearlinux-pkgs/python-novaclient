@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xC36CDCB4DF00C68C (infra-root@openstack.org)
 #
 Name     : python-novaclient
-Version  : 10.3.0
-Release  : 44
-URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-10.3.0.tar.gz
-Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-10.3.0.tar.gz
-Source99 : http://tarballs.openstack.org/python-novaclient/python-novaclient-10.3.0.tar.gz.asc
+Version  : 11.0.0
+Release  : 45
+URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.0.0.tar.gz
+Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.0.0.tar.gz
+Source99 : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.0.0.tar.gz.asc
 Summary  : Client library for OpenStack Compute API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -75,14 +75,14 @@ python3 components for the python-novaclient package.
 
 
 %prep
-%setup -q -n python-novaclient-10.3.0
+%setup -q -n python-novaclient-11.0.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532381979
+export SOURCE_DATE_EPOCH=1532694419
 python3 setup.py build -b py3
 
 %install

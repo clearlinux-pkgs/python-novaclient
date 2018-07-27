@@ -1,6 +1,25 @@
 CHANGES
 =======
 
+11.0.0
+------
+
+* Fix the help text for server-group-create
+* Fix inconsistency
+* Add support for microversion 2.65
+* Microversion 2.64 - Use new format policy in server group
+* Switch to stestr
+* Rename --endpoint-override to --os-endpoint-override
+* Add release note link in README
+* Fix help text in server-group-create
+* Fix trusted-image-certificate-id help text
+* Microversion 2.63 - Add trusted\_image\_certificates
+* Add CLI docs reference for flavor-update
+* Remove doc/build when building docs
+* Modify novaclient to support basic attributes
+* Remove PyPI downloads
+* fix tox python3 overrides
+
 10.3.0
 ------
 
