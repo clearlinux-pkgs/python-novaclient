@@ -1,6 +1,35 @@
 CHANGES
 =======
 
+11.1.0
+------
+
+* Recommend against using --force for evacuate/live migration
+* Add support for microversion 2.67: BDMv2 volume\_type
+* doc: Start using openstackdoctheme's extlink extension
+* Follow up "Fix up userdata argument to rebuild"
+* Update the CLI reference
+* Update the contributor guide
+* Fix up userdata argument to rebuild
+* Fix test\_instance\_action functional test failure
+* Add support changes-before for microversion 2.66
+* docs: Add redirects
+* Follow the new PTI for document build
+* Improve the description of optional arguments
+* Cleanup zuul.yaml
+* Add missing options in CLI reference
+* add lib-forward-testing-python3 test job
+* add python 3.6 unit test job
+* switch documentation job to new PTI
+* import zuul job settings from project-config
+* Enable split logging for cinder-novaclient interaction
+* Replace os-client-config to openstacksdk
+* Use uuidutils of oslo.utils
+* Fix server strings in reboot operation
+* Refactor the getid method in novaclient/base.py
+* Use jsonutils of oslo.serialization
+* Update reno for stable/rocky
+
 11.0.0
 ------
 
