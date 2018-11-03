@@ -6,7 +6,7 @@
 #
 Name     : python-novaclient
 Version  : 11.1.0
-Release  : 46
+Release  : 47
 URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.1.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.1.0.tar.gz
 Source99 : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.1.0.tar.gz.asc
@@ -80,7 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1540479239
+export SOURCE_DATE_EPOCH=1541272735
 python3 setup.py build
 
 %install
