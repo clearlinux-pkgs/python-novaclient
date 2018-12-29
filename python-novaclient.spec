@@ -6,7 +6,7 @@
 #
 Name     : python-novaclient
 Version  : 11.1.0
-Release  : 47
+Release  : 48
 URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.1.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.1.0.tar.gz
 Source99 : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.1.0.tar.gz.asc
