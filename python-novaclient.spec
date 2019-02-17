@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : python-novaclient
-Version  : 11.1.0
-Release  : 48
-URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.1.0.tar.gz
-Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.1.0.tar.gz
-Source99 : http://tarballs.openstack.org/python-novaclient/python-novaclient-11.1.0.tar.gz.asc
+Version  : 12.0.0
+Release  : 49
+URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-12.0.0.tar.gz
+Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-12.0.0.tar.gz
+Source99 : http://tarballs.openstack.org/python-novaclient/python-novaclient-12.0.0.tar.gz.asc
 Summary  : Client library for OpenStack Compute API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -34,8 +34,11 @@ BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 
 %description
+========================
 Team and repository tags
-        ========================
+========================
+.. image:: https://governance.openstack.org/tc/badges/python-novaclient.svg
+:target: https://governance.openstack.org/tc/reference/tags/index.html
 
 %package bin
 Summary: bin components for the python-novaclient package.
@@ -73,14 +76,15 @@ python3 components for the python-novaclient package.
 
 
 %prep
-%setup -q -n python-novaclient-11.1.0
+%setup -q -n python-novaclient-12.0.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541272735
+export SOURCE_DATE_EPOCH=1550427409
+export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install

@@ -1,6 +1,19 @@
 CHANGES
 =======
 
+12.0.0
+------
+
+* Remove deprecated novaclient.v2.contrib modules
+* Update hacking version
+* Fix flavor keyerror when nova boot vm
+* Change openstack-dev to openstack-discuss
+* Add Python 3.6 classifier to setup.cfg
+* Fix a type of block\_device\_mapping\_v2 in a comment
+* Fixes Python3 issue in decoding password
+* Deprecate the unused instance-name
+* Replace MB with MiB
+
 11.1.0
 ------
 
