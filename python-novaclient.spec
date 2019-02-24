@@ -6,7 +6,7 @@
 #
 Name     : python-novaclient
 Version  : 12.0.0
-Release  : 50
+Release  : 51
 URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-12.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-12.0.0.tar.gz
 Source99 : http://tarballs.openstack.org/python-novaclient/python-novaclient-12.0.0.tar.gz.asc
@@ -18,18 +18,14 @@ Requires: python-novaclient-license = %{version}-%{release}
 Requires: python-novaclient-python = %{version}-%{release}
 Requires: python-novaclient-python3 = %{version}-%{release}
 Requires: Babel
-Requires: Sphinx
 Requires: iso8601
 Requires: keystoneauth1
-Requires: openstackdocstheme
 Requires: oslo.i18n
 Requires: oslo.serialization
 Requires: oslo.utils
 Requires: pbr
-Requires: reno
 Requires: simplejson
 Requires: six
-Requires: sphinxcontrib-apidoc
 BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 
@@ -83,7 +79,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550427409
+export SOURCE_DATE_EPOCH=1551029514
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
