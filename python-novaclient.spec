@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xFC43F0EE211DFED8 (infra-root@openstack.org)
 #
 Name     : python-novaclient
-Version  : 14.2.0
-Release  : 59
-URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-14.2.0.tar.gz
-Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-14.2.0.tar.gz
-Source1 : http://tarballs.openstack.org/python-novaclient/python-novaclient-14.2.0.tar.gz.asc
+Version  : 15.0.0
+Release  : 60
+URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-15.0.0.tar.gz
+Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-15.0.0.tar.gz
+Source1 : http://tarballs.openstack.org/python-novaclient/python-novaclient-15.0.0.tar.gz.asc
 Summary  : Client library for OpenStack Compute API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -80,14 +80,14 @@ python3 components for the python-novaclient package.
 
 
 %prep
-%setup -q -n python-novaclient-14.2.0
+%setup -q -n python-novaclient-15.0.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565963685
+export SOURCE_DATE_EPOCH=1567437456
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
