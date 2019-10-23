@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xFC43F0EE211DFED8 (infra-root@openstack.org)
 #
 Name     : python-novaclient
-Version  : 15.1.0
-Release  : 63
-URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-15.1.0.tar.gz
-Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-15.1.0.tar.gz
-Source1 : http://tarballs.openstack.org/python-novaclient/python-novaclient-15.1.0.tar.gz.asc
+Version  : 16.0.0
+Release  : 64
+URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-16.0.0.tar.gz
+Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-16.0.0.tar.gz
+Source1 : http://tarballs.openstack.org/python-novaclient/python-novaclient-16.0.0.tar.gz.asc
 Summary  : Client library for OpenStack Compute API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -36,6 +36,7 @@ BuildRequires : oslo.utils
 BuildRequires : pbr
 BuildRequires : simplejson
 BuildRequires : six
+BuildRequires : util-linux
 
 %description
 ========================
@@ -80,14 +81,14 @@ python3 components for the python-novaclient package.
 
 
 %prep
-%setup -q -n python-novaclient-15.1.0
+%setup -q -n python-novaclient-16.0.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568171515
+export SOURCE_DATE_EPOCH=1571805836
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -104,7 +105,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/python-novaclient
-cp LICENSE %{buildroot}/usr/share/package-licenses/python-novaclient/LICENSE
+cp %{_builddir}/python-novaclient-16.0.0/LICENSE %{buildroot}/usr/share/package-licenses/python-novaclient/409fdc85b52da1c06e114e3806ae71336290fe4d
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -119,7 +120,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/python-novaclient/LICENSE
+/usr/share/package-licenses/python-novaclient/409fdc85b52da1c06e114e3806ae71336290fe4d
 
 %files python
 %defattr(-,root,root,-)
