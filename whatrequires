@@ -1,5 +1,6 @@
 # This file contains recursive sources that require this package
 cinder
+heat
 horizon
 neutron
 python-openstackclient

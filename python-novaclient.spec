@@ -6,10 +6,10 @@
 #
 Name     : python-novaclient
 Version  : 16.0.0
-Release  : 66
+Release  : 67
 URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-16.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-16.0.0.tar.gz
-Source1 : http://tarballs.openstack.org/python-novaclient/python-novaclient-16.0.0.tar.gz.asc
+Source1  : http://tarballs.openstack.org/python-novaclient/python-novaclient-16.0.0.tar.gz.asc
 Summary  : Client library for OpenStack Compute API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -42,8 +42,44 @@ BuildRequires : util-linux
 ========================
 Team and repository tags
 ========================
+
 .. image:: https://governance.openstack.org/tc/badges/python-novaclient.svg
-:target: https://governance.openstack.org/tc/reference/tags/index.html
+    :target: https://governance.openstack.org/tc/reference/tags/index.html
+
+.. Change things from this point on
+
+============================================
+Python bindings to the OpenStack Compute API
+============================================
+
+.. image:: https://img.shields.io/pypi/v/python-novaclient.svg
+    :target: https://pypi.org/project/python-novaclient/
+    :alt: Latest Version
+
+This is a client for the OpenStack Compute API. It provides a Python API (the
+``novaclient`` module) and a command-line script (``nova``). Each implements
+100% of the OpenStack Compute API.
+
+* License: Apache License, Version 2.0
+* `PyPi`_ - package installation
+* `Online Documentation`_
+* `Launchpad project`_ - release management
+* `Blueprints`_ - feature specifications
+* `Bugs`_ - issue tracking
+* `Source`_
+* `Specs`_
+* `How to Contribute`_
+* `Release Notes`_
+
+.. _PyPi: https://pypi.org/project/python-novaclient
+.. _Online Documentation: https://docs.openstack.org/python-novaclient/latest
+.. _Launchpad project: https://launchpad.net/python-novaclient
+.. _Blueprints: https://blueprints.launchpad.net/python-novaclient
+.. _Bugs: https://bugs.launchpad.net/python-novaclient
+.. _Source: https://opendev.org/openstack/python-novaclient
+.. _How to Contribute: https://docs.openstack.org/infra/manual/developers.html
+.. _Specs: http://specs.openstack.org/openstack/nova-specs/
+.. _Release Notes: https://docs.openstack.org/releasenotes/python-novaclient
 
 %package bin
 Summary: bin components for the python-novaclient package.
@@ -75,6 +111,7 @@ python components for the python-novaclient package.
 Summary: python3 components for the python-novaclient package.
 Group: Default
 Requires: python3-core
+Provides: pypi(python-novaclient)
 
 %description python3
 python3 components for the python-novaclient package.
@@ -82,13 +119,14 @@ python3 components for the python-novaclient package.
 
 %prep
 %setup -q -n python-novaclient-16.0.0
+cd %{_builddir}/python-novaclient-16.0.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571805836
+export SOURCE_DATE_EPOCH=1583213665
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
