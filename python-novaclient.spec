@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xC12B8E73B30F2FC8 (infra-root@openstack.org)
 #
 Name     : python-novaclient
-Version  : 17.1.0
-Release  : 69
-URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-17.1.0.tar.gz
-Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-17.1.0.tar.gz
-Source1  : http://tarballs.openstack.org/python-novaclient/python-novaclient-17.1.0.tar.gz.asc
+Version  : 17.2.0
+Release  : 70
+URL      : http://tarballs.openstack.org/python-novaclient/python-novaclient-17.2.0.tar.gz
+Source0  : http://tarballs.openstack.org/python-novaclient/python-novaclient-17.2.0.tar.gz
+Source1  : http://tarballs.openstack.org/python-novaclient/python-novaclient-17.2.0.tar.gz.asc
 Summary  : Client library for OpenStack Compute API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -24,6 +24,7 @@ Requires: oslo.serialization
 Requires: oslo.utils
 Requires: pbr
 Requires: simplejson
+Requires: stevedore
 BuildRequires : buildreq-distutils3
 BuildRequires : iso8601
 BuildRequires : keystoneauth1
@@ -32,6 +33,7 @@ BuildRequires : oslo.serialization
 BuildRequires : oslo.utils
 BuildRequires : pbr
 BuildRequires : simplejson
+BuildRequires : stevedore
 
 %description
 Team and repository tags
@@ -76,21 +78,22 @@ Requires: pypi(oslo.utils)
 Requires: pypi(pbr)
 Requires: pypi(prettytable)
 Requires: pypi(simplejson)
+Requires: pypi(stevedore)
 
 %description python3
 python3 components for the python-novaclient package.
 
 
 %prep
-%setup -q -n python-novaclient-17.1.0
-cd %{_builddir}/python-novaclient-17.1.0
+%setup -q -n python-novaclient-17.2.0
+cd %{_builddir}/python-novaclient-17.2.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1594662091
+export SOURCE_DATE_EPOCH=1596050929
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -106,7 +109,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/python-novaclient
-cp %{_builddir}/python-novaclient-17.1.0/LICENSE %{buildroot}/usr/share/package-licenses/python-novaclient/409fdc85b52da1c06e114e3806ae71336290fe4d
+cp %{_builddir}/python-novaclient-17.2.0/LICENSE %{buildroot}/usr/share/package-licenses/python-novaclient/409fdc85b52da1c06e114e3806ae71336290fe4d
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
